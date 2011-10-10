@@ -7,7 +7,7 @@ es-CO:
   company: "Compañía"
   file: "Archivo"
   register: "Registrar"
-  
+  to: "hasta"
   first_name: "Nombre"
   last_name: "Apellido(s)"
   username: "Nombre de usuario"
@@ -16,6 +16,11 @@ es-CO:
   email: "Correo electrónico"
   admin: "Administrador"
   create: "Crear"
+  manage: "Gestionar"
+  show: "Ver"
+  show_document: "Ver documento"
+  edit: "Editar"
+  delete: "Eliminar"
   
   rate: "Calificar"
   send: "Enviar"

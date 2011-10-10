@@ -1,23 +1,23 @@
 <%= form_for @request, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label t(:name) %><br />
+    <%= f.label t(:name) %> :
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label t(:start_date) %><br />
+    <%= f.label t(:start_date) %> :
     <%= f.date_select :start_date %>
   </p>
   <p>
-    <%= f.label t(:decision_date) %><br />
+    <%= f.label t(:decision_date) %> :
     <%= f.date_select :decision_date %>
   </p>
   <p>
-    <%= f.label t(:company) %><br />
+    <%= f.label t(:company) %> :
     <%= f.text_field :company %>
   </p>
   <p>
-    <%= f.label t(:file) %><br />
+    <%= f.label t(:file) %> :
     <%= f.file_field :file_upload %>
   </p>
   <p><%= f.submit t(:register) %></p>

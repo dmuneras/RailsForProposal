@@ -1,7 +1,33 @@
 <% title "RFP" %>
 
-
+<div class = "options"> 
+  <%= link_to t(:edit), edit_request_path(@request) %> |
+  <%= link_to t(:remove), @request, :confirm => '¿Está seguro?', :method => :delete %> |
+  <%= link_to t(:show_document),  "/upload/rfp/#{@request.filename}" , :target => "_blank"%>
+</div>
 <div id="rfp-status">
+   <div id="decision">
+    <% if @request.rated %>
+      <p>Este RFP ya fue calificado</p>
+    <% elsif @request.finished %>  
+      <p>Todos los responsables han calificado el RFP</p>
+      <% if current_user.admin %>
+        <%= semantic_form_for @request do |form| %>
+          <%= form.inputs do %>
+            <%= form.input :status, :label => "¿Acepta este RFP?", :as => :radio, :collection => {'Si' => 'accepted', 'No' => 'rejected'} %>
+            <%= form.input :comment, :input_html => {:rows => 8, :cols => 50} %>
+            <% end -%>
+            <%= form.buttons do %>
+              <%= form.commit_button t(:send) %>
+            <% end -%>            
+          <% end -%>
+        <% else -%>
+          <br/><em>Debe esperar que un usuario administrador califique el RFP</em>
+        <% end -%>
+    <% else %>
+      <em>Faltan responsables por calificar el RFP</em>
+    <% end -%>
+  </div>
   <div id="accept">
     <h2><%= t(:accepted) %></h2>
     <% for role in @request.section_roles.accepted %>
@@ -32,32 +58,10 @@
       </div>
     <% end -%>
   </div>
-  <div id="decision">
-    <% if @request.rated %>
-      <em>Este RFP ya fue calificado</em>
-    <% elsif @request.finished %>  
-      <em>Todos los responsables han calificado el RFP</em>
-      <% if current_user.admin %>
-        <%= semantic_form_for @request do |form| %>
-          <%= form.inputs do %>
-            <%= form.input :status, :label => "¿Acepta este RFP?", :as => :radio, :collection => {'Si' => 'accepted', 'No' => 'rejected'} %>
-            <%= form.input :comment, :label => t(:comment), :input_html => {:rows => 8, :cols => 50} %>
-            <% end -%>
-            <%= form.buttons do %>
-              <%= form.commit_button t(:send) %>
-            <% end -%>            
-          <% end -%>
-        <% else -%>
-          <br/><em>Debe esperar que un usuario administrador califique el RFP</em>
-        <% end -%>
-    <% else %>
-      <em>Faltan responsables por calificar el RFP</em>
-    <% end -%>
-  </div>
 </div>
 
-<div id="general-info">
-  <div id="rfp-info">
+<div class="general-info">
+  <div class="rfp-info">
     <h2><%= @request.name %></h2>
     <ul>
       <li><strong><%= t(:status) %>: </strong><%= t(@request.status) %></li>
@@ -87,8 +91,4 @@
   </div>
 </div>
 
-<p>
-  <%= link_to t(:edit), edit_request_path(@request) %> |
-  <%= link_to t(:remove), @request, :confirm => '¿Está seguro?', :method => :delete %> |
-  <%= link_to t(:back), requests_path %>
-</p>
+

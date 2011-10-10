@@ -10,7 +10,7 @@ class Request < ActiveRecord::Base
   has_many :section_roles, :through => :request_sections
   
   before_save :save_file
-  
+ 
   def rated
     self.status != 'pending'
   end
@@ -26,8 +26,8 @@ class Request < ActiveRecord::Base
   def save_file
     return unless self.file_upload
     self.filename = self.file_upload.original_filename
-    directory = "public/upload/rfp"
-    path = File.join(directory, self.filename)
+    directory = "#{Rails.root}/public/upload/rfp/"
+    path = File.join(directory,self.filename)
     File.open(path, "wb") { |f| f.write(self.file_upload.read) }
   end
   

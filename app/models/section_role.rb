@@ -22,5 +22,6 @@ class SectionRole < ActiveRecord::Base
     self.save
     self.request_section.update_average
   end
+
   
 end

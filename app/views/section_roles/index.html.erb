@@ -7,7 +7,7 @@
 <th>Fecha de inicio</th>
 <th>Fecha de decisión</th>
 <th>Estado</th>
-<th>Archivo</th>
+<th>Ir a RFP</th>
 <% for section_role in @section_roles %>
 	<tr>
 		<td><%= section_role.request_section.request.name%></td>
@@ -15,7 +15,7 @@
 		<td><%= section_role.request_section.request.start_date %></td>
 		<td><%= section_role.request_section.request.decision_date %></td>
 		<td><%= t(section_role.status) %></td>
-		<td><%= link_to "Descargar", section_role.request_section.request.filename %></td>
+		<td><%= link_to "Analizar", section_role.request_section.request %></td>
 	</tr>
 <% end %>
 </table>
