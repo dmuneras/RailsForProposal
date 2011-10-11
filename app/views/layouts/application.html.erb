@@ -11,7 +11,7 @@
     <div id="container">
       <div id="user-nav">
         <% if current_user %>        
-          <%= link_to "Principal", user_path(current_user) %> |
+          <%= link_to "Informacion Usuario", user_path(current_user) %> |
           <%= link_to t(:rfp), requests_path %> | 
           <% if current_user.admin %>
             <%= link_to t(:users), users_path %> |
