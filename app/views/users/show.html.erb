@@ -1,5 +1,12 @@
 <% title "Usuario" %>
 
+
+<div class="options">
+  <%= link_to "Editar datos", edit_user_path(@user) %> |
+  <%= link_to "Eliminar", @user, :confirm => '¿Está seguro?', :method => :delete %> |
+  <%= link_to "Ver todos", users_path %>
+</div>
+<div id= "user-content">
 <div id="user-info">
   <p>
     <strong>Nombre:</strong>
@@ -17,7 +24,6 @@
     <strong>E-mail:</strong>
     <%= @user.email %>
   </p>
-
 </div>
 
 <div id="user-section-roles">
@@ -32,9 +38,4 @@
     <%= link_to "Ver todos", user_section_roles_path(@user) %>
   </ul>
 </div>
-
-<p>
-  <%= link_to "Editar datos", edit_user_path(@user) %> |
-  <%= link_to "Eliminar", @user, :confirm => '¿Está seguro?', :method => :delete %> |
-  <%= link_to "Ver todos", users_path %>
-</p>
+</div>

@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    session[:last_request] = Request.find(params[:id])
   end
 
   def new

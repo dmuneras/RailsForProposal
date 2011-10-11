@@ -48,6 +48,7 @@ form{
     width:400px;
     border: 1px solid #000;
     padding:10px;
+    background-color: #C1EBFF;
    
 
 }
@@ -67,7 +68,6 @@ form{
   padding: 20px 40px;
   border: solid 1px #000;
   margin-top: 20px;
-  height: auto;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -130,7 +130,7 @@ th {
     letter-spacing: 2px;
     text-align: center;
     padding: 6px 6px 6px 12px;
-    background: #E3FEFE;
+    background: #C1EBFF;
     font-family: lucida;
 }
 
@@ -160,13 +160,20 @@ div#user-nav {
 
 /* RFP SHOW */
 
+div.complete-info{
+    margin-top:10px;
+    border-top: 1px solid black;
+}
 div.general-info {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	padding: 10px;
-	width: 30%;
-	margin: 8px;
-	background-color: #E8D99E;
+	width: 40%;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: #C1C1C1;
+	border: 1px solid black;
+
 }
 
 div.general-info div {
@@ -178,49 +185,70 @@ div.general-info div {
 }
 
 div#rfp-status {
-	float: right;
-	width: 60%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-top:10px;
+    width: 50%;
+    float:right;
+    background-color: #C1C1C1;
+    padding:10px;
+    text-align:center;
+    border:1px solid black;
+    
 }
 
-div.role-score {
-	float: right;
+div#rfp-status form{
+   border: none;
+   background-color:#C1C1C1;
 }
 
-div.role-score {
-	border-style: solid;
-	font-size: 20px;
+div#rfp-status form ol{
+    text-align:center;
+    background-color: #C1C1C1;
 }
 
+div#rfp-status em {
+    font-size:20px;
+}
 div#accept, div#reject {
-	float: left;
-	margin: 3px;
-	padding: 1px;
-	width: 45%;
+        margin-bottom: 1px solid black;
+	width: 80%;
+	text-align:center;
 }
+
 
 div.user-accept, div.user-reject {
 	-moz-border-radius: 6px;	
 	-webkit-border-radius: 6px;
 	padding: 6px;
 	margin: 2px;
+	margin-left:10px;
+	width:100%;
 }
 
-div.user-accept {
-	background-color: #55D8BB;
+div.user-reject{
+    background-color: #FBB1BA;
 }
 
-div.user-reject {
-	background-color: #E33F53;
+div.user-accept{
+    background-color: #85FFAB;
 }
-
 div#sections li a {
 	margin-left: 2px;
 	font-size: 8px;
 }
 
+div#user-content{
+    padding:50px;
+}
 div#user-info{
+       	-moz-border-radius: 6px;	
+	-webkit-border-radius: 6px;
+	border: 1px solid black;
 	margin-right: 30%;
 	float: left;
+	margin-bottom:10px;
+	padding: 10px;
 }
 
 div#decision {
@@ -239,7 +267,29 @@ div.options{
     text-align:center;
     margin-left:35%;
     width:300px;
+    margin-bottom: 10px;
     padding:10px;
-    background-color: #E8D99E;
+    background-color: #C1EBFF;
+    border:1px solid black;
+    
 
+}
+
+div.options:hover{
+    border: 2px solid black;
+}
+div.qualifications{
+    background-color: #fff;
+    border-top: 1px solid #000;
+}
+
+div.qualifications table{
+    border-top:10px;
+    padding:10px;
+    width:100%;
+}
+
+div.qualifications table td {
+    text-align:center;
+    width:50%;
 }

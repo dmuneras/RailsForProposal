@@ -5,8 +5,10 @@
   <%= link_to t(:remove), @request, :confirm => '¿Está seguro?', :method => :delete %> |
   <%= link_to t(:show_document),  "/upload/rfp/#{@request.filename}" , :target => "_blank"%>
 </div>
-<div id="rfp-status">
-   <div id="decision">
+
+
+<div class= "complete-info">
+  <div id="rfp-status">
     <% if @request.rated %>
       <p>Este RFP ya fue calificado</p>
     <% elsif @request.finished %>  
@@ -15,7 +17,7 @@
         <%= semantic_form_for @request do |form| %>
           <%= form.inputs do %>
             <%= form.input :status, :label => "¿Acepta este RFP?", :as => :radio, :collection => {'Si' => 'accepted', 'No' => 'rejected'} %>
-            <%= form.input :comment, :input_html => {:rows => 8, :cols => 50} %>
+            <%= form.input :comment, :label => "Comentario: ", :input_html => {:rows => 8, :cols => 50} %>
             <% end -%>
             <%= form.buttons do %>
               <%= form.commit_button t(:send) %>
@@ -24,71 +26,44 @@
         <% else -%>
           <br/><em>Debe esperar que un usuario administrador califique el RFP</em>
         <% end -%>
-    <% else %>
-      <em>Faltan responsables por calificar el RFP</em>
-    <% end -%>
+	<% else %>
+	<em>Faltan responsables por calificar el RFP</em>
+       <% end -%>
   </div>
-  <div id="accept">
-    <h2><%= t(:accepted) %></h2>
-    <% for role in @request.section_roles.accepted %>
-      <div class="user-accept">
-        <div class="role-score">
-          <strong><%= "%0.2f" % role.average %></strong>
-        </div>
-        <p><strong><%= role.user.full_name %></strong></p>
-        <p><em><%= role.request_section.section.name %></em></p>
-        <% if role.comment %>
-          <blockquote>"<%= role.comment %>"</blockquote>
+
+  <div class="general-info">
+    <div class="rfp-info">
+      <h2><%= @request.name %></h2>
+      <ul>
+        <li><strong><%= t(:status) %>: </strong><%= t(@request.status) %></li>
+        <li><strong><%= t(:start_date) %>: </strong><%= @request.start_date %></li>
+        <li><strong><%= t(:decision_date) %>: </strong><%= @request.decision_date %></li>
+	<li><strong><%= t(:time_remaining) %>: </strong><%= (@request.decision_date) - (Date.current) %> días</li>
+        <li><strong><%= t(:score) %>: </strong><%= "%0.2f" % @request.average %></li>
+      </ul>    
+    </div>
+    <div id="responsibles">
+      <strong><%= t(:responsibles) %></strong>
+      <ul>
+        <% for section_role in @request.section_roles %>
+          <li><%= section_role.user.full_name %>(<em><%= section_role.request_section.section.name %></em>)</li>
         <% end -%>
-      </div>
-    <% end -%>
-  </div>
-  <div id="reject">
-    <h2><%= t(:rejected)%></h2>
-    <% for role in @request.section_roles.rejected %>
-      <div class="user-reject">
-        <div class="role-score">
-          <strong><%= "%0.2f" % role.average %></strong>
-        </div>
-        <p><strong><%= role.user.full_name %></strong></p>
-        <p><em><%= role.request_section.section.name %></em></p>
-        <% if role.comment %>
-          <blockquote>"<%= role.comment %>"</blockquote>
-          <% end -%>
-      </div>
-    <% end -%>
+      </ul>
+      <%= link_to t(:add_responsible), new_request_section_role_path(@request) %>
+    </div>
+    <div id="sections">
+      <strong><%= t(:sections) %></strong>
+      <ul>
+        <% for request_section in @request.request_sections %>
+            <li><%= request_section.section.name %>
+	    (<em><%= "%0.2f" % request_section.average %></em>)
+	    <%= link_to "Agregar items", request_request_section_path(@request, request_section) %></li>
+        <% end -%>
+      </ul>
+      <%= link_to t(:add_section), new_request_request_section_path(@request) %>
+    </div>
   </div>
 </div>
-
-<div class="general-info">
-  <div class="rfp-info">
-    <h2><%= @request.name %></h2>
-    <ul>
-      <li><strong><%= t(:status) %>: </strong><%= t(@request.status) %></li>
-      <li><strong><%= t(:start_date) %>: </strong><%= @request.start_date %></li>
-      <li><strong><%= t(:decision_date) %>: </strong><%= @request.decision_date %></li>
-	  <li><strong><%= t(:time_remaining) %>: </strong><%= (@request.decision_date) - (Date.current) %> días</li>
-      <li><strong><%= t(:score) %>: </strong><%= "%0.2f" % @request.average %></li>
-    </ul>    
-  </div>
-  <div id="responsibles">
-    <strong><%= t(:responsibles) %></strong>
-    <ul>
-      <% for section_role in @request.section_roles %>
-        <li><%= section_role.user.full_name %>(<em><%= section_role.request_section.section.name %></em>)</li>
-      <% end -%>
-    </ul>
-    <%= link_to t(:add_responsible), new_request_section_role_path(@request) %>
-  </div>
-  <div id="sections">
-    <strong><%= t(:sections) %></strong>
-    <ul>
-      <% for request_section in @request.request_sections %>
-        <li><%= request_section.section.name %>(<em><%= "%0.2f" % request_section.average %></em>)<%= link_to "Agregar items", request_request_section_path(@request, request_section) %></li>
-      <% end -%>
-    </ul>
-    <%= link_to t(:add_section), new_request_request_section_path(@request) %>
-  </div>
-</div>
-
-
+<% if @request.finished %>
+  <%= render 'qualifications' %>
+<% end %>

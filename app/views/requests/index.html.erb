@@ -1,5 +1,10 @@
 <% title "RFP's" %>
 
+<div class= "options">
+  <%= link_to "Registrar RFP", new_request_path %> |
+  <%= link_to "Registrar usuario", new_user_path %>
+</div>
+
 <table>
   <tr>
     <th><%= t(:name) %></th>
@@ -14,5 +19,4 @@
   <% end %>
 </table>
 
-<p><%= link_to "Registrar RFP", new_request_path %></p>
-<p><%= link_to "Registrar usuario", new_user_path %></p>
+

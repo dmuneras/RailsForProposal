@@ -16,7 +16,7 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(params[:section])
     if @section.save
-      redirect_to @section, :notice => "Seccion creada exitosamente."
+      redirect_to session[:last_request], :notice => "Seccion creada exitosamente."
     else
       render :action => 'new'
     end
