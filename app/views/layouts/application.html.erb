@@ -8,6 +8,7 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div></div>
     <div id="container">
       <div id="user-nav">
         <% if current_user %>        
@@ -29,24 +30,24 @@
       <%= yield %>
     </div>
    
-    <div id="login-div">
+   <div id="login-div">
+  <h2>Login</h2>
+  <%= form_for UserSession.new do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+      </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit 'Login' %></p>
+  
+  <p><%= link_to "Volver", root_path %></p>
+  <% end %>
+</div>
 
-      <h2>Login</h2>
-      <%= form_for UserSession.new do |f| %>
-      <%= f.error_messages %>
-      <p>
-	<%= f.label :username %><br />
-	<%= f.text_field :username %>
-      </p>
-      <p>
-	<%= f.label :password %><br />
-	<%= f.password_field :password %>
-      </p>
-      <p><%= f.submit 'Login' %></p>
-      
-      <p><%= link_to "Volver", root_path %></p>
-      <% end %>
-    </div>
 
 
   </body>

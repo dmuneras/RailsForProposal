@@ -9,6 +9,8 @@ es-CO:
   register: "Registrar"
   to: "hasta"
   first_name: "Nombre"
+  statistics: "Estadisticas"
+  type: "Tipo"
   last_name: "Apellido(s)"
   username: "Nombre de usuario"
   password: "Contraseña"

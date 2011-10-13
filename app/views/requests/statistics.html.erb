@@ -3,7 +3,7 @@
 <div id= "statistics-table">
   <table>
     <th><%=t(:name)%></th>
-    <th><%=t(:average)%></th>
+    <th><%=t(:score)%></th>
     <% for report in @statistics do %>
       <%= request_type_info report %>
     <% end %>
