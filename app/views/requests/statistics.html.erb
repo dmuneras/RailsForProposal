@@ -1,0 +1,12 @@
+<% title "Estadisticas"%>
+
+<div id= "statistics-table">
+  <table>
+    <th><%=t(:name)%></th>
+    <th><%=t(:average)%></th>
+    <% for report in @statistics do %>
+      <%= request_type_info report %>
+    <% end %>
+  </table>
+</div>
+

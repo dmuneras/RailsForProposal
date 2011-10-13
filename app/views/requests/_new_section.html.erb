@@ -1,0 +1,16 @@
+<div id="new_section">
+<div>    
+    <%= semantic_form_for [@request, RequestSection.new] do |form| %>
+    <%= form.inputs do %>
+    <%= form.input :request_id, :as => :hidden, :value => @request.id %>
+    <%= form.input :section, :label => t(:section) %>
+    <% end -%>
+    <%= form.buttons do  %>
+    <%= form.commit_button :label => t(:add_section), :id => "create-session-existing" %>
+    <% end %>
+    <% end -%>
+    <%= link_to t(:add_section_to_the_list), new_section_path %> <br>
+</div>
+<%= link_to "Esconder formulario", "#", :id => "hide-existing-section"%>     
+</div>
+
