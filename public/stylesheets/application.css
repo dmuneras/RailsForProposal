@@ -31,10 +31,6 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
-    font-weight: bold;
-}
-
 table{
     
     text-align: center;
@@ -158,7 +154,7 @@ div.complete-info{
     margin-top:10px;
     border-top: 1px solid black;
 }
-div.general-info {
+div#general-info {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	width: 40%;
@@ -169,12 +165,12 @@ div.general-info {
 
 }
 
-div.general-info div {
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	background-color: #FFF;
-	padding: 10px;
-	margin: 10px;
+div#general-info div {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px;
 }
 
 div#rfp-status {
@@ -182,6 +178,7 @@ div#rfp-status {
     -webkit-border-radius: 10px;
     margin-top:20px;
     width: 50%;
+    height:366px;
     float:right;
     background-color: #FFC82E;
     padding:10px;
@@ -304,12 +301,67 @@ div.qualifications table th {
 
 div#new_section{
     display:none;
+    -moz-border-radius: 6px;	
+    -webkit-border-radius: 6px;
+    border: 1px solid black;
+    padding:30px;
+    background-color:#FFC82E;
+    
+}
+
+div#new_section div{ 
+    border:5px;
+    blackground-color:#FFC82E;
 }
 
 form#new_request_section{
     border:none;
 }
 
-#hide-existing-section{
+#statistics-table {
+  background-attachment:scroll;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:repeat repeat;
+  height:370px;
+  overflow-x:auto;
+  overflow-y:auto;
+  width:100%;
+    
+}
+#statistics-table table{
+    width:100%;
+}
+
+div.form-style{
+    padding-left:30%;
+    margin:10px;
+    
+}
+
+div.form-style form{
+   padding:10px; 
+}
+
+div#login-div{
+       
+    -moz-border-radius: 6px 20px 6px 15px;	
+    -webkit-border-radius: 6px 20px 6px 15px;
+    border: 1px solid black;
+    background-color: #FFC82E;
+    margin:10px;
     display:none;
 }
+
+div#login-div form{
+    text-align:center;
+    padding: 10px;
+    border:none;
+    font-size: 12pt;
+    margin:0px;
+
+}
+

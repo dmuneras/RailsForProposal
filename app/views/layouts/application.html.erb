@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "application", "formtastic" %>
-    <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag "application", "formtastic" , "calendar" %>
+    <%= javascript_include_tag :defaults, 'jquery.tools.min.js' %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -15,10 +15,11 @@
           <%= link_to t(:rfp), requests_path %> | 
           <% if current_user.admin %>
             <%= link_to t(:users), users_path %> |
+	    <%= link_to t(:statistics), statistics_requests_path %> |
           <% end -%>
           <%= link_to "Logout", logout_path %>
         <% else %>
-          <%= link_to "Login", login_path %>
+          <%= link_to "Login", "#", :rel => "#login-div", :id => "login" %>
         <% end -%>
       </div>
       <% flash.each do |name, msg| %>
@@ -27,5 +28,26 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+   
+    <div id="login-div">
+
+      <h2>Login</h2>
+      <%= form_for UserSession.new do |f| %>
+      <%= f.error_messages %>
+      <p>
+	<%= f.label :username %><br />
+	<%= f.text_field :username %>
+      </p>
+      <p>
+	<%= f.label :password %><br />
+	<%= f.password_field :password %>
+      </p>
+      <p><%= f.submit 'Login' %></p>
+      
+      <p><%= link_to "Volver", root_path %></p>
+      <% end %>
+    </div>
+
+
   </body>
 </html>

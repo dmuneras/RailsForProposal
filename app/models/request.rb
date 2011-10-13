@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload
+  attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
   
   attr_accessor :file_upload
 
@@ -10,6 +10,7 @@ class Request < ActiveRecord::Base
   has_many :section_roles, :through => :request_sections
   
   belongs_to :request_type
+
   before_save :save_file
  
   def rated
@@ -45,4 +46,23 @@ class Request < ActiveRecord::Base
     self.request_sections.inject(true){ |res, sec| res &&= sec.finished }
   end
   
+  def self.average_type type
+    rqs = Request.where(:request_type_id => type.id)
+    sum = 0.0
+    for request in rqs do
+      sum += request.average
+    end
+    total_avg = sum / rqs.count
+  end
+
+  def self.average_per_type
+    result = []
+    for type in RequestType.all do
+      type_avg = Hash.new
+      type_avg["name"] = type.name
+      type_avg["avg"] = self.average_type type
+      result << type_avg
+    end
+    return result
+  end
 end

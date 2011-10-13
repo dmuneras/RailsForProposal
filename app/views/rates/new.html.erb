@@ -4,6 +4,7 @@
   <%= @section_role.user.full_name %> - <%= @section_role.request_section.section.name %>
 </p>
 
+<div class="form-rates">
 <%= form_tag '/rates' do %>
   <%= hidden_field :section_role, :id %>
   <table border="0" cellspacing="5" cellpadding="5">
@@ -22,3 +23,4 @@
   </table>
   <%= submit_tag t(:rate) %>
 <% end -%>
+</div>

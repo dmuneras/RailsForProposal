@@ -22,7 +22,6 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(params[:request])
-    @request.request_type_id = params[:request_type][:request_type_id]
     if @request.save
       redirect_to @request, :notice => "RFP creado exitosamente."
     else
@@ -32,6 +31,10 @@ class RequestsController < ApplicationController
 
   def edit
     @request = Request.find(params[:id])
+    @types = []
+    for rq_type in RequestType.all do
+      @types << rq_type
+    end
   end
 
   def update
@@ -47,5 +50,9 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.destroy
     redirect_to requests_url, :notice => "RFP eliminado exitosamente."
+  end
+
+  def statistics
+    @statistics = Request.average_per_type
   end
 end

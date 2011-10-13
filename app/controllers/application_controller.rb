@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected 
   
   def logged_in?    
-    redirect_to(login_path, :notice => "Debe iniciar sesion") unless current_user
+    redirect_to(root_url, :notice => "Debe iniciar sesion") unless current_user
   end
   
   def is_admin?

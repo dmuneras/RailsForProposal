@@ -12,8 +12,11 @@ module RequestsHelper
       content_tag(:td) do
           content_tag( :a, (link_to t(:manage), rfp))
       end <<
-      content_tag(:td) do
+      
+      unless  rfp.filename.nil?
+        content_tag(:td) do
           content_tag( :a, (link_to t(:show), "/upload/rfp/#{rfp.filename}", :target => "_blank")) 
+        end
       end <<
       content_tag(:td) do
           content_tag( :a, (link_to t(:edit),  edit_request_path(rfp)))
@@ -23,4 +26,22 @@ module RequestsHelper
       end
     end
   end  
+
+  def request_type_info report
+    content_tag :tr do
+      content_tag(:td, report["name"]) <<
+      content_tag(:td, "%0.2f" % report["avg"])
+    end    
+  end
+
+  def statistics_request_types reports
+    content_tag :table do
+      content_tag(:th, t(:name))
+      for report in reports do
+        request_type_info(report)
+      end
+   end
+  end
+  
+
 end

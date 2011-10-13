@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "slide" %>
 <% title "RFP" %>
 
 <div class = "options"> 
@@ -31,27 +32,21 @@
        <% end -%>
   </div>
 
-  <div class="general-info">
-    <div class="rfp-info">
-      <h2><%= @request.name %></h2>
+  <div id="general-info">
+    <h2>Informacion General</h2>
+    <div class="pane" style="display:block;">
+      <h3><%= @request.name %></h3>
       <ul>
         <li><strong><%= t(:status) %>: </strong><%= t(@request.status) %></li>
         <li><strong><%= t(:start_date) %>: </strong><%= @request.start_date %></li>
         <li><strong><%= t(:decision_date) %>: </strong><%= @request.decision_date %></li>
 	<li><strong><%= t(:time_remaining) %>: </strong><%= (@request.decision_date) - (Date.current) %> días</li>
         <li><strong><%= t(:score) %>: </strong><%= "%0.2f" % @request.average %></li>
+        <li><strong><%= t(:type) %>: </strong><%=  @request.request_type.name %></li>
       </ul>    
     </div>
-    <div id="responsibles">
-      <strong><%= t(:responsibles) %></strong>
-      <ul>
-        <% for section_role in @request.section_roles %>
-          <li><%= section_role.user.full_name %>(<em><%= section_role.request_section.section.name %></em>)</li>
-        <% end -%>
-      </ul>
-      <%= link_to t(:add_responsible), new_request_section_role_path(@request) %>
-    </div>
-    <div id="sections">
+    <h2>Secciones</h2>
+    <div id="sections" class= "pane">
       <strong><%= t(:sections) %></strong>
       <p>Recuerde que debe agregar items de evaluacion a su seccion para poder calificarla dependiendo de esos items.</p>
       <ul>
@@ -61,23 +56,23 @@
 	    <%= link_to "Agregar items", request_request_section_path(@request, request_section) %></li>
         <% end -%>
       </ul>
-      <a id="add-existing-section">Agregar seccion</a> 
-      <a id="hide-existing-section">Esconder formulario</a>	
-      <div id= "new_section">
-        <%= semantic_form_for [@request, RequestSection.new] do |form| %>
-	<%= form.inputs do %>
-	<%= form.input :request_id, :as => :hidden, :value => @request.id %>
-	<%= form.input :section, :label => t(:section) %>
-	<% end -%>
-	<%= form.buttons do  %>
-	<%= form.commit_button :label => t(:add_section), :id => "create-session-existing" %>
-	<% end %>
-	<% end -%>
-        <%= link_to t(:add_section_to_the_list), new_section_path %> 	
-      </div>
+      <%= link_to "Agregar seccion", "#", :id => "add-existing-section"%>     
+      <%= render 'new_section' %>
+    </div>
+
+    <h2>Responsables</h2>
+
+    <div id="responsibles" class= "pane">
+      <strong><%= t(:responsibles) %></strong>
+      <ul>
+        <% for section_role in @request.section_roles %>
+          <li><%= section_role.user.full_name %>(<em><%= section_role.request_section.section.name %></em>)</li>
+        <% end -%>
+      </ul>
+      <%= link_to t(:add_responsible), new_request_section_role_path(@request) %>
     </div>
   </div>
 </div>
-<% if @request.finished %>
+<% if @request.finished and  (!(@request.section_roles.accepted.blank?) or  !(@request.section_roles.rejected.blank?)) %>
   <%= render 'qualifications' %>
 <% end %>

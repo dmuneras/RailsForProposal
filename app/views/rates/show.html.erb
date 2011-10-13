@@ -1,8 +1,8 @@
 <% title "#{@section_role.request_section.request.name} "%>
 <h2><%= "#{@section_role.request_section.section.name}" %></h2>
 
-<p><strong><%= t(:score)%>: </strong><%= "%0.2f" % @section_role.average %></p>
-
+<center><p><strong><%= t(:score)%>: </strong><%= "%0.2f" % @section_role.average %></p></center>
+<div class="form-style">
 <%= semantic_form_for [@section_role.user, @section_role] do |form| %>
   <%= form.inputs do %>
     <%= form.input :status, :label => t(:do_you_support), :as => :radio, :collection => @options %>
@@ -12,3 +12,4 @@
     <%= form.commit_button t(:send) %>
   <% end -%>
 <% end -%>
+</div>

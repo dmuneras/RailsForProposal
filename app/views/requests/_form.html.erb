@@ -1,29 +1,18 @@
-<%= form_for @request, :html => { :multipart => true } do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label t(:name) %> :
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label t(:start_date) %> :
-    <%= f.date_select :start_date %>
-  </p>
-  <p>
-    <%= f.label t(:decision_date) %> :
-    <%= f.date_select :decision_date %>
-  </p>
-  <p>
-    <%= f.label t(:company) %> :
-    <%= f.text_field :company %>
-  </p>
+<div class="form-style">
+<%= semantic_form_for @request, :html => { :multipart => true } do |f| %>
+ 
+  <%= f.inputs do %>
+     <%= f.input :name, :label => t(:name) %>
+     <%= f.input :start_date, :label => t(:start_date), :as => :datepicker %> 
+     <%= f.input :decision_date, :label =>  t(:decision_date), :as => :datepicker %> 
+     <%= f.input :company, :label => t(:company) %> 
+     <%= f.input :file, :label => t(:file), :as => :file %>  
+     <%= f.input :request_type_id, :as => :select, :collection => @types %>
+  <% end -%>
+  
+  <%= f.buttons do %>
+    <%= f.commit_button :label => t(:register) %>  
+  <% end -%>
 
-  <p>
-    <%= f.label t(:type) %> :
-    <%= select "request_type", "request_type_id", @types.collect{|t| [t.name , t.id ]}, :prompt => "selecciona el tipo" %>
-  </p>
-  <p>
-    <%= f.label t(:file) %> :
-    <%= f.file_field :file_upload %>
-  </p>
-  <p><%= f.submit t(:register) %></p>
-<% end %>
+<% end -%>
+</div>

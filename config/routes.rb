@@ -20,6 +20,11 @@ RailsForProposal::Application.routes.draw do
     resources :request_sections do
       resources :section_items
     end
+
+    collection do
+      get 'statistics'
+    end
+
   end
 
   # The priority is based upon order of creation:
