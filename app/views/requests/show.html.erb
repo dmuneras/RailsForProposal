@@ -53,6 +53,7 @@
     </div>
     <div id="sections">
       <strong><%= t(:sections) %></strong>
+      <p>Recuerde que debe agregar items de evaluacion a su seccion para poder calificarla dependiendo de esos items.</p>
       <ul>
         <% for request_section in @request.request_sections %>
             <li><%= request_section.section.name %>
@@ -60,7 +61,20 @@
 	    <%= link_to "Agregar items", request_request_section_path(@request, request_section) %></li>
         <% end -%>
       </ul>
-      <%= link_to t(:add_section), new_request_request_section_path(@request) %>
+      <a id="add-existing-section">Agregar seccion</a> 
+      <a id="hide-existing-section">Esconder formulario</a>	
+      <div id= "new_section">
+        <%= semantic_form_for [@request, RequestSection.new] do |form| %>
+	<%= form.inputs do %>
+	<%= form.input :request_id, :as => :hidden, :value => @request.id %>
+	<%= form.input :section, :label => t(:section) %>
+	<% end -%>
+	<%= form.buttons do  %>
+	<%= form.commit_button :label => t(:add_section), :id => "create-session-existing" %>
+	<% end %>
+	<% end -%>
+        <%= link_to t(:add_section_to_the_list), new_section_path %> 	
+      </div>
     </div>
   </div>
 </div>

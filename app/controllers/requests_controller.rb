@@ -14,10 +14,15 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @types = []
+    for rq_type in RequestType.all do
+      @types << rq_type
+    end
   end
 
   def create
     @request = Request.new(params[:request])
+    @request.request_type_id = params[:request_type][:request_type_id]
     if @request.save
       redirect_to @request, :notice => "RFP creado exitosamente."
     else

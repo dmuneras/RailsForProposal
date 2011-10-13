@@ -16,6 +16,11 @@
     <%= f.label t(:company) %> :
     <%= f.text_field :company %>
   </p>
+
+  <p>
+    <%= f.label t(:type) %> :
+    <%= select "request_type", "request_type_id", @types.collect{|t| [t.name , t.id ]}, :prompt => "selecciona el tipo" %>
+  </p>
   <p>
     <%= f.label t(:file) %> :
     <%= f.file_field :file_upload %>

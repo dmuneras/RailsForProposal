@@ -1,0 +1,12 @@
+<% title "Request Type" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @request_type.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_request_type_path(@request_type) %> |
+  <%= link_to "Destroy", @request_type, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", request_types_path %>
+</p>

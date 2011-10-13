@@ -21,7 +21,6 @@ es-CO:
   show_document: "Ver documento"
   edit: "Editar"
   delete: "Eliminar"
-  
   rate: "Calificar"
   send: "Enviar"
   comment: "Comentario"
@@ -43,6 +42,7 @@ es-CO:
   section: "Sección"
   add_responsible: "Agregar responsable"
   add_section: "Agregar sección"
+  add_section_to_the_list: "Agregar nuevo tipo de sección"
   value: "Peso"
   
   edit: "Editar"

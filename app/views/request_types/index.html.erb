@@ -1,0 +1,17 @@
+<% title "Request Types" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for request_type in @request_types %>
+    <tr>
+      <td><%= request_type.name %></td>
+      <td><%= link_to "Show", request_type %></td>
+      <td><%= link_to "Edit", edit_request_type_path(request_type) %></td>
+      <td><%= link_to "Destroy", request_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Request Type", new_request_type_path %></p>

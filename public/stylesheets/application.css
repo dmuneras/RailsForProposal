@@ -47,9 +47,6 @@ form{
     width:400px;
     border: 1px solid #000;
     padding:10px;
-
-   
-
 }
 
 .clear {
@@ -74,6 +71,7 @@ form{
   -webkit-border-radius: 10px;
   padding: 5px 8px;
   margin: 10px 0;
+  text-align:center;
 }
 
 #flash_notice {
@@ -302,4 +300,16 @@ div.qualifications table td {
 div.qualifications table th {
     border:none;
     font-size:16pt;
+}
+
+div#new_section{
+    display:none;
+}
+
+form#new_request_section{
+    border:none;
+}
+
+#hide-existing-section{
+    display:none;
 }

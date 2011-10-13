@@ -4,11 +4,12 @@ class Request < ActiveRecord::Base
   attr_accessor :file_upload
 
   validates :name, :uniqueness => true
-
+  
   has_many :request_sections, :dependent => :destroy
   has_many :sections, :through => :request_sections
   has_many :section_roles, :through => :request_sections
   
+  belongs_to :request_type
   before_save :save_file
  
   def rated
