@@ -16,7 +16,7 @@ es-CO:
   password: "Contraseña"
   password_confirmation: "Confirme contraseña"
   email: "Correo electrónico"
-  admin: "Administrador"
+  admin: "Admin"
   create: "Crear"
   manage: "Gestionar"
   show: "Ver"
@@ -29,6 +29,7 @@ es-CO:
   score: "Puntaje"
   do_you_support: "¿Apoya este RFP?"
   rfp: "RFPs"
+  rfp_list: "lista de RFPs"
   users: "Usuarios"
   user: "Usuario"
   pending: Pendiente
@@ -59,6 +60,7 @@ es-CO:
   total_rejected: "Total RFPs rechazados"
   avg_rejected: "Promedio calificacion RFPs rechazados"
   type_request: "Tipo de RFP"
+  new_user: "Iniciar session"
   number:
     percentage:
       format:

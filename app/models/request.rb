@@ -5,7 +5,8 @@ class Request < ActiveRecord::Base
   attr_accessor :file_upload
 
   validates :name, :uniqueness => true
-  
+  validates_presence_of :name, :file_upload, :start_date , :decision_date
+
   has_many :request_sections, :dependent => :destroy
   has_many :sections, :through => :request_sections
   has_many :section_roles, :through => :request_sections
@@ -109,6 +110,6 @@ class Request < ActiveRecord::Base
       result << type_stat
     end
     return result
-  end
+ end
 
 end

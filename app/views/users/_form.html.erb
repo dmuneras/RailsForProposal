@@ -1,32 +1,16 @@
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label t(:first_name) %> :
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label t(:last_name) %> :
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label t(:username)%> :
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label t(:password) %> :
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label t(:password_confirmation) %> :
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.label t(:email) %> :
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label t(:admin) %>
-    <%= f.check_box :admin %>
-  </p>
-  <p><%= f.submit t(:create) %></p>
+<div class= "form-style">
+<%= semantic_form_for @user do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :first_name, :label => t(:first_name) %>
+    <%= f.input :last_name, :label => t(:last_name) %>
+    <%= f.input :username, :label => t(:username) %>
+    <%= f.input :password, :label => t(:password), :as => :password %>
+    <%= f.input :password_confirmation, :label => t(:password_confirmation), :as => :password %>
+    <%= f.input :email, :label => t(:email), :as => :email %>
+    <%= f.input :admin, :label => t(:admin), :as => :radio %>
+ <% end %>
+ <%= f.buttons do %>
+   <%= f.commit_button :label => t(:create) %>  
+ <% end -%> 
 <% end %>
+</div>

@@ -18,7 +18,7 @@
 /* currently active header */
 #general-info h2.current {
 	cursor:default;
-	background-color:#B6B6B6;
+	background-color:#E5E5E5;
 }
 
 /* accordion pane */
@@ -29,3 +29,4 @@
 	height:250px;
 	padding:15px;
 }
+

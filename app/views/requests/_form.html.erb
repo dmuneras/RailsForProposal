@@ -1,6 +1,5 @@
 <div class="form-style">
 <%= semantic_form_for @request, :html => { :multipart => true } do |f| %>
- 
   <%= f.inputs do %>
      <%= f.input :name, :label => t(:name) %>
      <%= f.input :start_date, :label => t(:start_date), :as => :datepicker %> 
