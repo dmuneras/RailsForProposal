@@ -9,7 +9,8 @@ $('document').ready(function(){
 	    opacity: 0.9
 	},
 	
-	closeOnClick: false
+	 closeOnClick: false,
+	 closeOnEsc: false
 	
     });
 

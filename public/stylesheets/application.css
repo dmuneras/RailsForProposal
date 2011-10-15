@@ -80,7 +80,6 @@ form{
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   background-color: #FCC;
-  border: solid 1px #C66;
 }
 
 .fieldWithErrors {
