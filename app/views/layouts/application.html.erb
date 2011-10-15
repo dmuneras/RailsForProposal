@@ -8,21 +8,22 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div></div>
-    <div id="container">
-      <div id="user-nav">
+    <div id= "cabezote"><h1>Rails for Proposal(No hubo imaginacion)</h1></div>
+    <div id="user-nav">
         <% if current_user %>        
-          <%= link_to "Informacion Usuario", user_path(current_user) %> |
-          <%= link_to t(:rfp), requests_path %> | 
+          <div><%= link_to "Informacion Usuario", user_path(current_user) %></div>
+          <div><%= link_to t(:rfp), requests_path %></div>
           <% if current_user.admin %>
-            <%= link_to t(:users), users_path %> |
-	    <%= link_to t(:statistics), statistics_requests_path %> |
+            <div> <%= link_to t(:users), users_path %></div>
+	    <div><%= link_to t(:statistics), statistics_requests_path %></div>
+	    <div> <%= link_to t(:new_request_type), new_request_type_path %></div>
           <% end -%>
-          <%= link_to "Logout", logout_path %>
+           <div><%= link_to "Logout", logout_path %></div>
         <% else %>
-          <%= link_to "Login", "#", :rel => "#login-div", :id => "login" %>
+           <div id = "login-link" ><%= link_to "Login", "#", :rel => "#login-div", :id => "login" %></div>
         <% end -%>
-      </div>
+    </div>
+    <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>

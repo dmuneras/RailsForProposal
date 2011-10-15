@@ -14,7 +14,7 @@ class RequestTypesController < ApplicationController
   def create
     @request_type = RequestType.new(params[:request_type])
     if @request_type.save
-      redirect_to @request_type, :notice => "Successfully created request type."
+      redirect_to root_url, :notice => "Tipo de RFP creado exitosamente."
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class RequestTypesController < ApplicationController
   def update
     @request_type = RequestType.find(params[:id])
     if @request_type.update_attributes(params[:request_type])
-      redirect_to @request_type, :notice  => "Successfully updated request type."
+      redirect_to root_url, :notice  => "Tipo de RFP actualizado exitosamente."
     else
       render :action => 'edit'
     end
@@ -36,6 +36,6 @@ class RequestTypesController < ApplicationController
   def destroy
     @request_type = RequestType.find(params[:id])
     @request_type.destroy
-    redirect_to request_types_url, :notice => "Successfully destroyed request type."
+    redirect_to root_url, :notice => "Tipo de RFP eliminado."
   end
 end

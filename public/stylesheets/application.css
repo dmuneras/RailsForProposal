@@ -58,7 +58,6 @@ form{
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px #000;
   margin-top: 20px;
 }
 
@@ -145,8 +144,32 @@ td.alt {
 
 /* NAVIGATION */
 div#user-nav {
-	float: right;
+	text-align: center;
+	height:60px;
+	margin-top:5px;
+	margin-left:10%;
 }
+
+div#user-nav a {
+    text-decoration:none;
+}
+
+div#user-nav div#login-link{
+   margin-left:40%;
+}
+
+div#user-nav div{
+    float:left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid black;
+    background-color:#8BABCD;
+    width:150px;
+    height:25px;
+    margin:2px;
+    padding:5px;
+}
+
 
 /* RFP SHOW */
 
@@ -160,7 +183,7 @@ div#general-info {
 	width: 40%;
 	margin-top:20px;
 	margin-bottom:20px;
-	background-color: #FFC82E;
+	background-color: #8BABCD;;
 	border: 1px solid black;
 
 }
@@ -180,7 +203,7 @@ div#rfp-status {
     width: 50%;
     height:366px;
     float:right;
-    background-color: #FFC82E;
+    background-color: #8BABCD;
     padding:10px;
     text-align:center;
     border:1px solid black;
@@ -189,12 +212,12 @@ div#rfp-status {
 
 div#rfp-status form{
    border: none;
-   background-color:#FFC82E;
+   background-color:#DFDFDF;
 }
 
 div#rfp-status form ol{
     text-align:center;
-    background-color: #FFC82E;
+    background-color: #8BABCD;
 }
 
 div#rfp-status em {
@@ -305,13 +328,13 @@ div#new_section{
     -webkit-border-radius: 6px;
     border: 1px solid black;
     padding:30px;
-    background-color:#FFC82E;
+    background-color:#DFDFDF;
     
 }
 
 div#new_section div{ 
     border:5px;
-    blackground-color:#FFC82E;
+    blackground-color:#DFDFDF;
 }
 
 form#new_request_section{
@@ -351,7 +374,7 @@ div#login-div{
     -moz-border-radius: 6px 20px 6px 15px;	
     -webkit-border-radius: 6px 20px 6px 15px;
     border: 1px solid black;
-    background-color: #FFC82E;
+    background-color: #5A94B8;
     margin:10px;
     display:none;
 }
@@ -365,3 +388,8 @@ div#login-div form{
 
 }
 
+div#cabezote{
+    width:100%;
+    height:120px;
+    background-color:#fff;
+}

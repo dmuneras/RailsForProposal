@@ -1,9 +1,15 @@
 <% title "Estadisticas"%>
-
+<h2><%= t(:statistics_for_request_type)%></h2>
+<p>Se evaluan los promedios teniendo en cuenta solo los RFP ya concluidos y excluyendo los que estan en proceso.</p>
 <div id= "statistics-table">
   <table>
-    <th><%=t(:name)%></th>
-    <th><%=t(:score)%></th>
+    <th><%=t(:type_request)%></th>
+    <th><%=t(:score_avg)%></th>
+    <th><%= t(:total_accepted)%></th>
+    <th><%= t(:avg_accepted)%></th>
+    <th><%= t(:total_rejected)%></th>
+    <th><%= t(:avg_rejected)%></th>
+    <th><%= t(:first_evaluation_time)%></th>
     <% for report in @statistics do %>
       <%= request_type_info report %>
     <% end %>

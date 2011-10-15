@@ -53,6 +53,6 @@ class RequestsController < ApplicationController
   end
 
   def statistics
-    @statistics = Request.average_per_type
+    @statistics = Request.statistics_per_type
   end
 end

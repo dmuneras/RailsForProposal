@@ -7,6 +7,14 @@ $('document').ready(function(){
     $("#login[rel]").overlay({mask: '#fff'});
 
     
+    $("#user-nav div").mouseover(function(){
+	$(this).css('background-color', '#5A94B8');	
+    });
+   
+    $("#user-nav div").mouseout(function(){
+	$(this).css('background-color', '#8BABCD');	
+    });
+
 
     $('input.ui-datepicker').dateinput({
 	format: 'dddd / dd.mm.yyyy',
@@ -18,7 +26,7 @@ $('document').ready(function(){
     });
 
     $("#add-existing-section").click(function(){
-	$("#new_section").css({'display':'block', 'background-color' : '#FFC82E'});
+	$("#new_section").css({'display':'block', 'background-color' : '#DFDFDF'});
 	$(this).hide();
 	$("#exposeMask").show(400);
 	$('#new_section').expose();

@@ -1,4 +1,5 @@
 class Request < ActiveRecord::Base
+  
   attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
   
   attr_accessor :file_upload
@@ -46,23 +47,68 @@ class Request < ActiveRecord::Base
     self.request_sections.inject(true){ |res, sec| res &&= sec.finished }
   end
   
-  def self.average_type type
-    rqs = Request.where(:request_type_id => type.id)
-    sum = 0.0
-    for request in rqs do
-      sum += request.average
+  #AVERAGE METHODS
+
+  def self.average_gen array
+    if array.blank?
+      return 0
     end
-    total_avg = sum / rqs.count
+    sum = 0.0
+    for thing in array do
+      sum += thing.average 
+    end
+    total_avg = sum / array.count
+    return total_avg
   end
 
-  def self.average_per_type
+  def self.statistics_per_type_status(type, status)
+    rqs = Request.where(:request_type_id => type.id, :status => status)
+    avg_total = average_gen rqs
+    result = Hash.new
+    result["total"] = rqs.count
+    result["avg_total"] = avg_total
+    return result
+  end
+  
+  def self.average_type type
+    rqs = Request.where("request_type_id = :request_type_id AND decision_date > :today",
+                        {:request_type_id => type.id, :today => Date.today}
+    )
+    return average_gen rqs
+  end
+
+  def end_first_evaluation 
+    role = self.section_roles.first
+    time = 0
+    time = (( role.created_at -  self.created_at)/ 1.day).to_i unless role.nil? 
+    return time
+  end
+
+  def self.first_evaluation_per_type type
+    rqs = Request.where(:request_type_id => type.id)
+    if rqs.blank?
+      return 0.0
+    end
+    sum = 0.0
+    for request in rqs do
+      sum += request.end_first_evaluation
+    end
+    return total_avg = sum / rqs.count
+  end
+
+  
+  def self.statistics_per_type
     result = []
     for type in RequestType.all do
-      type_avg = Hash.new
-      type_avg["name"] = type.name
-      type_avg["avg"] = self.average_type type
-      result << type_avg
+      type_stat = Hash.new
+      type_stat["name"] =  type.name  
+      type_stat["avg"]  = self.average_type(type)
+      type_stat["first_evaluation_time"] = self.first_evaluation_per_type(type) 
+      type_stat["accepted_stat"] = self.statistics_per_type_status(type, "accepted") 
+      type_stat["rejected_stat"] = self.statistics_per_type_status(type, "rejected") 
+      result << type_stat
     end
     return result
   end
+
 end

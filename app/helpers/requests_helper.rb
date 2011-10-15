@@ -30,7 +30,12 @@ module RequestsHelper
   def request_type_info report
     content_tag :tr do
       content_tag(:td, report["name"]) <<
-      content_tag(:td, "%0.2f" % report["avg"])
+      content_tag(:td, "%0.2f" % report["avg"]) <<
+      content_tag(:td, report["accepted_stat"]["total"]) <<
+      content_tag(:td, report["accepted_stat"]["avg_total"]) <<
+      content_tag(:td, report["rejected_stat"]["total"]) <<
+      content_tag(:td, report["rejected_stat"]["avg_total"]) <<
+      content_tag(:td, "#{report["first_evaluation_time"]} #{t(:days)}") 
     end    
   end
 
