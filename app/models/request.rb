@@ -5,7 +5,10 @@ class Request < ActiveRecord::Base
   attr_accessor :file_upload
 
   validates :name, :uniqueness => true
-  validates_presence_of :name, :file_upload, :start_date , :decision_date
+  validates_presence_of :name, :on => :create
+  #validates_presence_of :file_upload, :on => :create
+  validates_presence_of :start_date , :on => :create
+  validates_presence_of :decision_date, :on => :create
 
   has_many :request_sections, :dependent => :destroy
   has_many :sections, :through => :request_sections
@@ -110,6 +113,16 @@ class Request < ActiveRecord::Base
       result << type_stat
     end
     return result
- end
+  end
 
+  def self.rfps_per_type
+    result =[]
+    for type in RequestType.all do
+      data = Hash.new
+      data["total"] = Request.where(:request_type_id => type.id).count  
+      data["name"] = "#{type.name} ( #{data["total"]} )"
+      result << data
+    end
+    return result
+  end
 end

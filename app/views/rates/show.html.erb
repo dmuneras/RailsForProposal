@@ -6,7 +6,7 @@
 <%= semantic_form_for [@section_role.user, @section_role] do |form| %>
   <%= form.inputs do %>
     <%= form.input :status, :label => t(:do_you_support), :as => :radio, :collection => @options %>
-    <%= form.input :comment, :label => t(:comment) %>
+    <%= form.input :comment, :label => t(:comment), :as => :text %>
   <% end -%>
   <%= form.buttons do %>
     <%= form.commit_button t(:send) %>

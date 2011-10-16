@@ -1,4 +1,9 @@
 <% title "Estadisticas"%>
+
+<div class= "graph-content">
+  <h1>Cantidad de RFPs por tipo</h1>
+  <%= @graph.html_safe %>
+</div>
 <h2><%= t(:statistics_for_request_type)%></h2>
 <p>Se evaluan los promedios teniendo en cuenta solo los RFP ya concluidos y excluyendo los que estan en proceso.</p>
 <div id= "statistics-table">

@@ -18,7 +18,7 @@
         <%= semantic_form_for @request do |form| %>
           <%= form.inputs do %>
             <%= form.input :status, :label => "¿Acepta este RFP?", :as => :radio, :collection => {'Si' => 'accepted', 'No' => 'rejected'} %>
-            <%= form.input :comment, :label => "Comentario: ", :input_html => {:rows => 8, :cols => 50} %>
+            <%= form.input :comment, :label => "Comentario: ", :as => :text ,:input_html => { :class => "widgEditor"} %>
             <% end -%>
             <%= form.buttons do %>
               <%= form.commit_button t(:send) %>

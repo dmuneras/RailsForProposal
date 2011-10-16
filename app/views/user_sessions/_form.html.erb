@@ -1,0 +1,15 @@
+<%= form_for @user_session do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label t(:username) %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label t(:password) %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit %></p> 
+  <p><%= link_to t(:back), root_url %></p>
+<% end %>
+
+

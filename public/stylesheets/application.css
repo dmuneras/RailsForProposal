@@ -182,6 +182,7 @@ div#general-info {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	width: 40%;
+	height:460px;
 	margin-top:20px;
 	margin-bottom:20px;
 	background-color: #8BABCD;;
@@ -202,7 +203,7 @@ div#rfp-status {
     -webkit-border-radius: 10px;
     margin-top:20px;
     width: 50%;
-    height:366px;
+    height:440px;
     float:right;
     background-color: #8BABCD;
     padding:10px;
@@ -213,7 +214,9 @@ div#rfp-status {
 
 div#rfp-status form{
    border: none;
-   background-color:#8BABCD;;
+   background-color:#8BABCD;
+   width:100%;
+   height:300px;
 }
 
 div#rfp-status form ol{
@@ -351,7 +354,7 @@ form#new_request_section{
   background-origin:initial;
   background-position:initial initial;
   background-repeat:repeat repeat;
-  height:370px;
+  height:250px;
   overflow-x:auto;
   overflow-y:auto;
   width:100%;
@@ -368,7 +371,8 @@ div.form-style{
 }
 
 div.form-style form{
-   padding:10px; 
+   padding:10px;
+   width:80%;
 }
 
 div#cabezote{
@@ -380,4 +384,11 @@ div#cabezote{
 
 div#cabezote h1{
     font-family: cursive;
+}
+
+div.graph-content{
+    text-align:center;
+    padding:20px;
+    margin-top:10px;
+    border-top: 1px solid black;
 }

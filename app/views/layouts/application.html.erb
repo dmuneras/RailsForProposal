@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "application", "formtastic" , "calendar" %>
-    <%= javascript_include_tag :defaults, 'jquery.tools.min.js' %>
+    <title><%= content_for?(:title) ? yield(:title) : "RforR" %></title>
+    <%= stylesheet_link_tag "application", "formtastic" , "calendar"%>
+    <%= javascript_include_tag :defaults, 'jquery.tools.min.js' , 'swfobject.js'%>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

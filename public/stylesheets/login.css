@@ -1,0 +1,19 @@
+div#login-div{
+       
+    -moz-border-radius: 6px 20px 6px 15px;	
+    -webkit-border-radius: 6px 20px 6px 15px;
+    border: 1px solid black;
+    background-color: #8BABCD;
+    margin:10px;
+    width:400px;
+    margin-left:30%;
+}
+
+div#login-div form{
+    text-align:center;
+    padding: 10px;
+    border:none;
+    font-size: 12pt;
+    margin:0px;
+
+}

@@ -14,13 +14,11 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
-    @types = []
-    for rq_type in RequestType.all do
-      @types << rq_type
-    end
+    @types = RequestType.all 
   end
 
   def create
+     @types =  RequestType.all 
     @request = Request.new(params[:request])
     if @request.save
       redirect_to @request, :notice => "RFP creado exitosamente."
@@ -31,10 +29,7 @@ class RequestsController < ApplicationController
 
   def edit
     @request = Request.find(params[:id])
-    @types = []
-    for rq_type in RequestType.all do
-      @types << rq_type
-    end
+    @types = RequestType.all
   end
 
   def update
@@ -42,7 +37,7 @@ class RequestsController < ApplicationController
     if @request.update_attributes(params[:request])
       redirect_to @request, :notice  => "RFP actualizado exitosamente."
     else
-      render :action => 'edit'
+      render :action => 'edit', :notice => "No se pudo actualizar"
     end
   end
 
@@ -54,5 +49,28 @@ class RequestsController < ApplicationController
 
   def statistics
     @statistics = Request.statistics_per_type
+    pievalues = []
+    for data in Request.rfps_per_type do 
+      pievalues <<  PieValue.new(data["total"], data["name"])
+    end
+    @graph =  graph_code pievalues
   end
+
+  def graph_code values
+    respond_to do |wants|
+      wants.html {
+        @graph = open_flash_chart_object( 600, 300, url_for( :action => 'statistics', :format => :json ) )
+      }
+      wants.json { 
+        title = Title.new("Grafico estadistico")
+        chart = OpenFlashChart.new( title ) do |c|
+          c <<  Pie.new( :values => values, :animate => true, :colours => ["D90037", "#0037D9", "#000"])
+          c.set_bg_colour('#FFFFFF')
+          c.set_title = title
+        end
+        render :text => chart, :layout => false
+      }
+    end
+  end
+  
 end
