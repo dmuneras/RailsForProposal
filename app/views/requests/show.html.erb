@@ -42,7 +42,7 @@
         <li><strong><%= t(:decision_date) %>: </strong><%= @request.decision_date %></li>
 	<li><strong><%= t(:time_remaining) %>: </strong><%= (@request.decision_date) - (Date.current) %> días</li>
         <li><strong><%= t(:score) %>: </strong><%= "%0.2f" % @request.average %></li>
-        <li><strong><%= t(:type) %>: </strong><%=  @request.request_type.name %></li>
+        <li><strong><%= t(:type) %>: </strong><%=  @request.request_type.name if  @request.request_type != nil %></li>
       </ul>    
     </div>
     <h2>Secciones</h2>
