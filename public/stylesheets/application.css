@@ -327,6 +327,27 @@ div.qualifications table th {
     font-size:16pt;
 }
 
+div.comments{
+    border-top: 1px solid #000;
+    
+}
+
+div.comments h3 {
+    text-align:center;
+}
+div.comments form{
+    border:none;
+    margin-left:15%;
+    width:100%;
+}
+div.comment{
+    -moz-border-radius: 6px;	
+    -webkit-border-radius: 6px;
+    margin-top: 10px;
+    padding:10px;
+    border: 1px solid black;
+}
+
 div#new_section{
     display:none;
     -moz-border-radius: 6px;	
@@ -392,3 +413,4 @@ div.graph-content{
     margin-top:10px;
     border-top: 1px solid black;
 }
+

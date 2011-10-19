@@ -1,14 +1,13 @@
 RailsForProposal::Application.routes.draw do
  
+
   match '/login' => 'user_sessions#new'
   match '/logout' => 'user_sessions#destroy'
   
   resources :user_sessions
-
   resources :rates
-
   resources :sections
-
+  resources :comments, :only => :delete
   resources :users do
      resources :section_roles
   end
@@ -16,6 +15,7 @@ RailsForProposal::Application.routes.draw do
   resources :request_types
 
   resources :requests do
+    resources :comments
     resources :section_roles
     resources :request_sections do
       resources :section_items

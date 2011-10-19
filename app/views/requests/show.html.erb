@@ -73,6 +73,5 @@
     </div>
   </div>
 </div>
-<% if @request.finished and  (!(@request.section_roles.accepted.blank?) or  !(@request.section_roles.rejected.blank?)) %>
-  <%= render 'qualifications' %>
-<% end %>
+<%= render 'qualifications' %>
+<%= render :partial => "comments", :locals => {:comments =>@comments, :commentable => @request} %>

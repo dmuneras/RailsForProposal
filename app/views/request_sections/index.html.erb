@@ -13,7 +13,7 @@
       <td><%= request_section.comment %></td>
       <td><%= link_to "Detalles", request_section %></td>
       <td><%= link_to "Editar", edit_request_section_path(request_section) %></td>
-      <td><%= link_to "Eliminar", request_section, :confirm => '¿Está seguro?', :method => :delete %></td>
+      <td><%= link_to "Eliminar", request_section, :confirm => '¿Está seguro?', :controller => :comments,  :method => :delete %></td>
     </tr>
   <% end %>
 </table>

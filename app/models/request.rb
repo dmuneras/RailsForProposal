@@ -1,12 +1,14 @@
 class Request < ActiveRecord::Base
   
+  has_many :comments, :as => :commentable
+
   attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
   
   attr_accessor :file_upload
 
+  
   validates :name, :uniqueness => true
   validates_presence_of :name, :on => :create
-  #validates_presence_of :file_upload, :on => :create
   validates_presence_of :start_date , :on => :create
   validates_presence_of :decision_date, :on => :create
 
