@@ -14,4 +14,19 @@ sections.each do |section|
   Section.find_or_create_by_name(section)
 end
 
-User.create(:username => "admin", :email => "admin@admin.com", :password => "admin", :password_confirmation => "admin", :admin => true)
+puts "creating a admin..."
+user = User.create(:username => "admin", :email => "admin@admin.com", :password => "admin", :password_confirmation => "admin", :admin => true)
+
+if user.save
+  puts "admin was created"
+else
+  puts "admin wasnt created"
+end
+
+rq = Request.create(:name => "RoR", :start_date => "2011-08-16", :decision_date => "2011-08-16", )
+
+if rq.save
+  puts "request was created"
+else
+  puts "request wasnt created"
+end
