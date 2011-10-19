@@ -2,7 +2,8 @@
   <h2> Comentarios </h2>
   <% for comment in comments do %>
     <div class="comment">
-      <%=simple_format comment.content %>
+      <p><%= "#{comment.user.username.capitalize} dice:" %><p>
+      <p><%= simple_format comment.content %></p>
       <%= link_to t(:remove), request_comment_path(commentable.id, comment.id),
 	           :method => :delete %>
     </div>  

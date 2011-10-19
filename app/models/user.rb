@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :username, :uniqueness => true
   validates_presence_of :first_name, :last_name, :username, :password, :password_confirmation
   has_many :section_roles, :dependent => :destroy
-  
+
   def full_name
     "#{first_name} #{last_name}"
   end
