@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  #before_filter :logged_in?
-  #before_filter :is_admin?, :only => [:index, :new, :create, :destroy]
-  #before_filter :is_current_user?, :only => [:show, :edit]
+  before_filter :logged_in?
+  before_filter :is_admin?, :only => [:index, :new, :create, :destroy]
+  before_filter :is_current_user?, :only => [:show, :edit]
   
   def index
     @users = User.all
