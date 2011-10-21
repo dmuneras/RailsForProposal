@@ -26,7 +26,7 @@ $('document').ready(function(){
     });
 
     $("#add-existing-section").click(function(){
-	$("#new_section").css({'display':'block', 'background-color' : '#8BABCD'});
+	$("#new_section").css({'display':'block', 'background-color' : '#93988F'});
 	$(this).hide();
 	$("#exposeMask").show(400);
 	$('#new_section').expose();
