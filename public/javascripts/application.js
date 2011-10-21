@@ -5,12 +5,14 @@
 $('document').ready(function(){
 
   
-    $("#user-nav div").mouseover(function(){
-	$(this).css('background-color', '#5A94B8');	
+    $(".user-nav div").mouseover(function(){
+	$(this).css('background-color','#000');	
+	$(this).children("a").css('color', "#fff");
     });
    
-    $("#user-nav div").mouseout(function(){
-	$(this).css('background-color', '#8BABCD');	
+    $(".user-nav div").mouseout(function(){
+	$(this).css('background-color', '#93988F');
+	$("#user-nav div a").css('color', "#000");	
     });
 
 

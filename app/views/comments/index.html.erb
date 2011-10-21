@@ -9,13 +9,5 @@
   <% end %>
 </div>
 
-<h2>Nuevo comentario</h2>
 
-<% form_for [@commentable, Comment.new] do |f| %>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :rows => "4", :cols => "50" %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
 

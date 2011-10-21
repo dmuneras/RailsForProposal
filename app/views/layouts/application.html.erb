@@ -8,8 +8,8 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id= "cabezote"><h1>Rails for Proposal(No hubo imaginacion)</h1></div>
-    <div id="user-nav">
+    <div id= "cabezote"><%= image_tag("RailsForProposal_2.png")%></div>
+    <div class="user-nav">
         <% if current_user %>        
           <div><%= link_to "Informacion Usuario", user_path(current_user) %></div>
           <div><%= link_to t(:rfp_list), requests_path %></div>

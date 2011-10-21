@@ -1,10 +1,10 @@
 <% title "Usuario" %>
 
 
-<div class="options">
-  <%= link_to "Editar datos", edit_user_path(@user) %> |
-  <%= link_to "Eliminar", @user, :confirm => '¿Está seguro?', :method => :delete %> |
-  <%= link_to "Ver todos", users_path %>
+<div class="user-nav" id="inter">
+  <div><%= link_to "Editar datos", edit_user_path(@user) %></div> 
+  <div><%= link_to "Eliminar", @user, :confirm => '¿Está seguro?', :method => :delete %></div>
+  <div><%= link_to "Ver todos", users_path %></div>
 </div>
 <div id= "user-content">
 <div id="user-info">

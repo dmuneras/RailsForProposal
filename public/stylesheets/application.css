@@ -1,34 +1,43 @@
 body {
-  background-color: #5A94B8;
-  letter-spacing: 2px; 
-  font-size: 10pt;
-  font-family: lucida;
-  color:#202A33;
-  
+  background-color: #DEDFE1;
+    letter-spacing: 2px; 
+    font-size: 10pt;
+    font-family: lucida;
+    color:#202A33;
+
 }
 
-#logo img{
+div#cabezote{
+    height:200px;
     width:90%;
+    text-align:center;
     margin-left:5%;
+    margin-bottom:10px;
+}
+
+div#cabezote img{
+    width:100%;
+    height:200px;
+    border:1px solid black;
 }
 h1{
-  font-family: lucida;
-  text-align: center;
-
-}
+    font-family: lucida;
+    text-align: center;
+    
+  }
 
 h2{
-  text-align:center;
+    text-align:center;
 }
 
 
 a img {
-  border: none;
+    border: none;
 }
 
 a {
-  color: #000;
-  text-decoration: underline;
+    color: #000;
+    text-decoration: underline;
 }
 
 table{
@@ -36,14 +45,6 @@ table{
     text-align: center;
 }
 
-form{
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    margin-left:30%;
-    width:400px;
-    border: 1px solid #000;
-    padding:10px;
-}
 
 .clear {
   clear: both;
@@ -144,31 +145,34 @@ td.alt {
 }
 
 /* NAVIGATION */
-div#user-nav {
+div.user-nav {
 	text-align: center;
 	height:60px;
 	margin-top:5px;
 	margin-left:10%;
 }
 
-div#user-nav a {
+div.user-nav a {
     text-decoration:none;
 }
 
-div#user-nav div#login-link{
+div.user-nav div#login-link{
    margin-left:40%;
 }
 
-div#user-nav div{
+div.user-nav div{
     float:left;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border: 1px solid black;
-    background-color:#8BABCD;
+    border-bottom-left-radius:60px;
+    border-bottom-right-radius:60px;
+    background-color:#93988F;
     width:150px;
     height:25px;
     margin:2px;
     padding:5px;
+}
+
+div#inter{
+    margin-left:25%;
 }
 
 
@@ -185,7 +189,7 @@ div#general-info {
 	height:460px;
 	margin-top:20px;
 	margin-bottom:20px;
-	background-color: #8BABCD;;
+	background-color: #93988F;
 	border: 1px solid black;
 
 }
@@ -205,7 +209,7 @@ div#rfp-status {
     width: 50%;
     height:440px;
     float:right;
-    background-color: #8BABCD;
+    background-color: #93988F;
     padding:10px;
     text-align:center;
     border:1px solid black;
@@ -214,14 +218,14 @@ div#rfp-status {
 
 div#rfp-status form{
    border: none;
-   background-color:#8BABCD;
+   background-color:##93988F;
    width:100%;
    height:300px;
 }
 
 div#rfp-status form ol{
     text-align:center;
-    background-color: #8BABCD;
+    background-color: #93988F;
 }
 
 div#rfp-status em {
@@ -293,13 +297,23 @@ div.options{
     margin-bottom: 10px;
     padding:10px;
     border:1px solid black;
-    background-color: #8BABCD;
+    background-color: #93988F;
 }
 
 span.option{
-   float:right;
+  float:right;
   margin-right:12%;
   margin-top:-34px;
+}
+span.option2{
+  float:right;
+  margin-right:33%;
+  margin-top:-40px;
+  font-size:14px;
+}
+
+span#user{
+    margin-right:28%;
 }
 
 div.options:hover{
@@ -355,13 +369,13 @@ div#new_section{
     -webkit-border-radius: 6px;
     border: 1px solid black;
     padding:30px;
-    background-color:#8BABCD;;
+    background-color:#93988F;
     
 }
 
 div#new_section div{ 
     border:5px;
-    blackground-color:#8BABCD;;
+    blackground-color:#93988F;
 }
 
 form#new_request_section{
@@ -395,17 +409,6 @@ div.form-style{
 div.form-style form{
    padding:10px;
    width:80%;
-}
-
-div#cabezote{
-    width:100%;
-    height:120px;
-    background-color:#fff;
-    font-size:20pt;
-}
-
-div#cabezote h1{
-    font-family: cursive;
 }
 
 div.graph-content{
