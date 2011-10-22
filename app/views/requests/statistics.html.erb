@@ -1,23 +1,44 @@
 <% title "Estadisticas"%>
-
-<div class= "graph-content">
-  <h1>Cantidad de RFPs por tipo</h1>
-  <%= @graph.html_safe %>
+<ul class= "tabs">
+  <li><a href = "#">Estadisticas por tipo de RFP</a></li>
+  <li><a href = "#">Estadisticas por tipo usuarios</a></li>
+</ul>
+<div class= "panes">
+  <div class= "container">
+      <table>
+      <tr><td class="graph">
+         <h1>Cantidad de RFPs por tipo</h1>
+         <%= @graph.html_safe %>
+      </td></tr>
+      <tr><td id="out-table">
+      <h2><%= t(:statistics_for_request_type)%></h2>
+      <p>Se evaluan los promedios teniendo en cuenta solo los RFP ya concluidos y excluyendo los que estan en proceso.</p>
+        <table id="statistics-table">
+	  <th><%=t(:type_request)%></th>
+	  <th><%=t(:score_avg)%></th>
+          <th><%= t(:total_accepted)%></th>
+	  <th><%= t(:avg_accepted)%></th>
+	  <th><%= t(:total_rejected)%></th>
+	  <th><%= t(:avg_rejected)%></th>
+	  <th><%= t(:first_evaluation_time)%></th>
+	  <% for report in @statistics do %>
+	  <%= request_type_info report %>
+	  <% end %>
+         </table>
+      </td></tr>
+      </table>
+  </div>
+  <div class="container">
+    <h1>Estadisticas por tipo de cliente</h1>
+    <table>
+      <th><%= t(:username)%></th>
+      <th><%= t(:total_requests)%></th>
+      <th><%= t(:total_rejected)%></th>
+      <th><%= t(:total_accepted)%></th>
+      <th><%= t(:total_pending)%></th>
+      <% for report in @statistics_user do %>
+      <%= user_info report %>
+      <% end %>
+    </table>
+  </div>
 </div>
-<h2><%= t(:statistics_for_request_type)%></h2>
-<p>Se evaluan los promedios teniendo en cuenta solo los RFP ya concluidos y excluyendo los que estan en proceso.</p>
-<div id= "statistics-table">
-  <table>
-    <th><%=t(:type_request)%></th>
-    <th><%=t(:score_avg)%></th>
-    <th><%= t(:total_accepted)%></th>
-    <th><%= t(:avg_accepted)%></th>
-    <th><%= t(:total_rejected)%></th>
-    <th><%= t(:avg_rejected)%></th>
-    <th><%= t(:first_evaluation_time)%></th>
-    <% for report in @statistics do %>
-      <%= request_type_info report %>
-    <% end %>
-  </table>
-</div>
-

@@ -1,9 +1,8 @@
 class Request < ActiveRecord::Base
   
-  has_many :comments, :as => :commentable
+
 
   attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
-  
   attr_accessor :file_upload
 
   
@@ -12,6 +11,7 @@ class Request < ActiveRecord::Base
   validates_presence_of :start_date , :on => :create
   validates_presence_of :decision_date, :on => :create
 
+  has_many :comments, :as => :commentable
   has_many :request_sections, :dependent => :destroy
   has_many :sections, :through => :request_sections
   has_many :section_roles, :through => :request_sections
@@ -53,7 +53,7 @@ class Request < ActiveRecord::Base
     self.request_sections.inject(true){ |res, sec| res &&= sec.finished }
   end
   
-  #AVERAGE METHODS
+  #TYPE AVERAGE METHODS 
 
   def self.average_gen array
     if array.blank?
@@ -127,4 +127,5 @@ class Request < ActiveRecord::Base
     end
     return result
   end
+
 end

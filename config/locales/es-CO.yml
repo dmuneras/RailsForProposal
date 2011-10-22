@@ -33,6 +33,8 @@ es-CO:
   users: "Usuarios"
   user: "Usuario"
   pending: Pendiente
+  total_pending: Total pendientes
+  total_requests: Total de RFPs
   accepted: "Aceptado"
   rejected: "Rechazado"
   rated: "Calificado"

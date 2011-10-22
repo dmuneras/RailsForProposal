@@ -3,7 +3,8 @@
 
 
 $('document').ready(function(){
-
+    
+    $("ul.tabs").tabs("div.panes > div.container");
   
     $(".user-nav div").mouseover(function(){
 	$(this).css('background-color','#000');	

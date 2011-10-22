@@ -49,12 +49,17 @@ class RequestsController < ApplicationController
   end
 
   def statistics
-    @statistics = Request.statistics_per_type
+
+    #TYPE STATISTICS
+    @statistics = Request.statistics_per_type 
     pievalues = []
     for data in Request.rfps_per_type do 
       pievalues <<  PieValue.new(data["total"], data["name"])
     end
     @graph =  graph_code pievalues
+    
+    #USER STATISTICS
+    @statistics_user = User.statistics_per_user
   end
 
   def graph_code values

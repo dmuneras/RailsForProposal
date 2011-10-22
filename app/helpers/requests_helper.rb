@@ -38,15 +38,15 @@ module RequestsHelper
       content_tag(:td, "#{report["first_evaluation_time"]} #{t(:days)}") 
     end    
   end
-
-  def statistics_request_types reports
-    content_tag :table do
-      content_tag(:th, t(:name))
-      for report in reports do
-        request_type_info(report)
-      end
-   end
+  
+  def user_info report
+    content_tag :tr do
+      content_tag(:td, report["username"]) <<
+      content_tag(:td, report["total_rfp"]) <<
+      content_tag(:td, report["total_rfp_per_status"]["rejected"]) << 
+      content_tag(:td, report["total_rfp_per_status"]["accepted"]) <<
+      content_tag(:td, report["total_rfp_per_status"]["pending"]) 
+    end    
   end
   
-
 end
