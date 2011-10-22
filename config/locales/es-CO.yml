@@ -54,7 +54,7 @@ es-CO:
   remove: "Eliminar"
   back: "Volver"
   days: "dias"
-  first_evaluation_time: "Promedio tiempo evaluacion preliminar"
+  first_evaluation_time: "Promedio tiempo asignacion de roles"
   new_request_type: "Nuevo tipo de RFP"
   score_avg: "Promedio de puntajes"
   total_accepted: "Total RFPs acceptados"
