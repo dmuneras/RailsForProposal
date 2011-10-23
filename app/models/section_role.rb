@@ -4,7 +4,7 @@ class SectionRole < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :request_section
-  
+
   scope :pending, where(:status => "pending")
   scope :accepted, where(:status => "accepted")
   scope :rejected, where(:status => "rejected")
