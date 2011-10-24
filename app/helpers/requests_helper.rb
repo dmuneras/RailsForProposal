@@ -48,5 +48,14 @@ module RequestsHelper
       content_tag(:td, report["total_rfp_per_status"]["pending"]) 
     end    
   end
+
+  def sector_info report
+    content_tag :tr do
+      logger.info "************\n\n\n#{report} clase : #{report.class}\n\n\n"
+      logger.info "************\n\n\n#{report["name"]} clase : #{report["no_companies"]}\n\n\n"
+      content_tag(:td, report[:name]) <<
+      content_tag(:td, report[:no_companies])        
+    end    
+  end
   
 end

@@ -1,6 +1,6 @@
 class Request < ActiveRecord::Base
   
-  attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
+  attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id, :company_id
   attr_accessor :file_upload
   
   validates :name, :uniqueness => true
@@ -15,6 +15,8 @@ class Request < ActiveRecord::Base
   has_many :section_items, :through => :request_sections
   
   belongs_to :request_type
+  belongs_to :company
+
 
   before_save :save_file
  

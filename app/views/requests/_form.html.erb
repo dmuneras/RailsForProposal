@@ -4,14 +4,13 @@
      <%= f.input :name, :label => t(:name) %>
      <%= f.input :start_date, :label => t(:start_date), :as => :datepicker %> 
      <%= f.input :decision_date, :label =>  t(:decision_date), :as => :datepicker %> 
-     <%= f.input :company, :label => t(:company) %> 
+     <%= f.input :company_id, :label => t(:company), :as => :select, :collection => @companies %> 
      <%= f.input :file, :label => t(:file), :as => :file %>  
-     <%= f.input :request_type_id, :as => :select, :collection => @types %>
+     <%= f.input :request_type_id, :label => t(:request_type) , :as => :select, :collection => @types %>
   <% end -%>
   
   <%= f.buttons do %>
     <%= f.commit_button :label => t(:register) %>  
   <% end -%>
-
 <% end -%>
 </div>

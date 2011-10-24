@@ -1,9 +1,11 @@
 RailsForProposal::Application.routes.draw do
  
+  resources :sectors
 
   match '/login' => 'user_sessions#new'
   match '/logout' => 'user_sessions#destroy'
-  
+
+  resources :companies  
   resources :user_sessions
   resources :rates
   resources :sections

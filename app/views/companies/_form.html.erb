@@ -1,0 +1,12 @@
+<div class= "form-style">
+<%= semantic_form_for @company do |f| %>
+   <%= f.inputs do %>
+     <%= f.input :name, :label => t(:name) %>
+     <%= f.input :sector_id, :label => t(:sector_id) , :as => :select, :collection => @sectors %>   
+ <% end %>
+   <%= f.buttons do %>
+    <%= f.commit_button :label => t(:register) %>  
+    
+  <% end -%>
+<% end %>
+</div>

@@ -1,0 +1,12 @@
+<% title "Sector" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sector.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_sector_path(@sector) %> |
+  <%= link_to "Destroy", @sector, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sectors_path %>
+</p>

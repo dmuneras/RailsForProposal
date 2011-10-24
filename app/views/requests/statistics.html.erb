@@ -2,6 +2,7 @@
 <ul class= "tabs">
   <li><a href = "#">Estadisticas por tipo de RFP</a></li>
   <li><a href = "#">Estadisticas por tipo usuarios</a></li>
+  <li><a href = "#">Estadisticas por tipo sector productivo</a></li>
 </ul>
 <div class= "panes">
   <div class= "container">
@@ -38,6 +39,16 @@
       <th><%= t(:total_pending)%></th>
       <% for report in @statistics_user do %>
       <%= user_info report %>
+      <% end %>
+    </table>
+  </div>
+  <div class="container">
+    <h1>Estadisticas por sector productivo</h1>
+    <table>
+      <th><%= t(:sector)%></th>
+      <th><%= t(:total_requests)%></th>
+      <% for report in @statistics_sector do %>
+      <%= sector_info report %>
       <% end %>
     </table>
   </div>

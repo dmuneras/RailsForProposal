@@ -9,9 +9,13 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 sections = %w[Jurídica Contractual Financiera Técnica]
-
+sectors = %w[Privado Publico]
 sections.each do |section|
   Section.find_or_create_by_name(section)
+end
+
+sectors.each do |sector|
+  Sector.find_or_create_by_name(sector)
 end
 
 puts "creating a admin..."

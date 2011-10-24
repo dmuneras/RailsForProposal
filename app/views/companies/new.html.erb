@@ -1,0 +1,10 @@
+<% title t(:new_company) %>
+
+<p>Si el sector financiero no esta registrado, registralo aqui
+<%= link_to t(:new_sector), new_sector_path %></p>
+<% if current_user.admin? %>
+  <p>Para gestionar los sectores: <%= link_to t(:sectors), sectors_path %></p>
+<% end %>
+<%= render 'form' %>
+
+

@@ -19,10 +19,12 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @types = RequestType.all 
+    @companies = Company.all
   end
 
   def create
-     @types =  RequestType.all 
+    @types =  RequestType.all
+    @companies = Company.all 
     @request = Request.new(params[:request])
     if @request.save
       redirect_to @request, :notice => "RFP creado exitosamente."
@@ -62,6 +64,9 @@ class RequestsController < ApplicationController
     
     #USER STATISTICS
     @statistics_user = User.statistics_per_user
+
+    #SECTOR STATISTICS
+    @statistics_sector = Sector.rqs_per_sector
   end
 
   def graph_code values
