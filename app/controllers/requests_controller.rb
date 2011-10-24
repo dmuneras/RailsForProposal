@@ -36,6 +36,7 @@ class RequestsController < ApplicationController
   def edit
     @request = Request.find(params[:id])
     @types = RequestType.all
+    @companies = Company.all
   end
 
   def update
