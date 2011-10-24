@@ -3,6 +3,7 @@
     <%= f.input :request_section_id, :as => :hidden %>
     <%= f.input :name, :label => t(:name) %>
     <%= f.input :value, :label => t(:value), :as => :select, :collection => (1..5) %>
+    <%= f.input :required, :label => t(:required) %>
   <% end -%>
   <%= f.buttons do  %>
 	<%= f.commit_button :label => "Agregar Item" %>

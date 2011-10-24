@@ -9,6 +9,9 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    if @request.satisfy_required_items == false
+      @request.update_attributes(:status => 'rejected')
+    end
     @comments = @request.comments
     session[:last_request] = Request.find(params[:id])
   end
@@ -49,7 +52,6 @@ class RequestsController < ApplicationController
   end
 
   def statistics
-
     #TYPE STATISTICS
     @statistics = Request.statistics_per_type 
     pievalues = []

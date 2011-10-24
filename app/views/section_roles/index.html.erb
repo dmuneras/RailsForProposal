@@ -8,6 +8,7 @@
 <th>Fecha de decisión</th>
 <th>Estado</th>
 <th>Ir a RFP</th>
+<th>Evaluar</th>
 <% for section_role in @section_roles %>
 	<tr>
 		<td><%= section_role.request_section.request.name%></td>
@@ -16,6 +17,7 @@
 		<td><%= section_role.request_section.request.decision_date %></td>
 		<td><%= t(section_role.status) %></td>
 		<td><%= link_to "Analizar",  section_role.request_section.request%></td>
+		<td><%= link_to "Evaluar",new_rate_path(:id => section_role.id)%></td>
 	</tr>
 <% end %>
 </table>

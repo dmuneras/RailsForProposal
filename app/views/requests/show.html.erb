@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag "slide" %>
 <% title "RFP" %>
-
+<% if @request.satisfy_required_items == false %>
+  <h2>El proyecto se encuentra cancelado automaticamente porque no cumplimos con alguno de los
+  campos exigidos</h2>
+<% end %>
 <div class = "options"> 
   <%= link_to t(:edit), edit_request_path(@request) %> |
   <%= link_to t(:remove), @request, :confirm => '¿Está seguro?', :method => :delete %> |
   <%= link_to t(:show_document),  "/upload/rfp/#{@request.filename}" , :target => "_blank"%>
 </div>
-
 
 <div class= "complete-info">
   <div id="rfp-status">
@@ -69,7 +71,7 @@
           <li><%= section_role.user.full_name %>(<em><%= section_role.request_section.section.name %></em>)</li>
         <% end -%>
       </ul>
-      <%= link_to t(:add_responsible), new_request_section_role_path(@request) %>
+      <%= link_to t(:add_responsible), new_request_section_role_path(@request) , :id => "add-responsable"%>
     </div>
   </div>
 </div>

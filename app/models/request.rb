@@ -1,10 +1,7 @@
 class Request < ActiveRecord::Base
   
-
-
   attr_accessible :name, :start_date, :decision_date, :company, :comment, :filename, :response_time, :status, :average, :file_upload, :request_type_id
   attr_accessor :file_upload
-
   
   validates :name, :uniqueness => true
   validates_presence_of :name, :on => :create
@@ -15,6 +12,7 @@ class Request < ActiveRecord::Base
   has_many :request_sections, :dependent => :destroy
   has_many :sections, :through => :request_sections
   has_many :section_roles, :through => :request_sections
+  has_many :section_items, :through => :request_sections
   
   belongs_to :request_type
 
@@ -51,6 +49,15 @@ class Request < ActiveRecord::Base
   
   def finished
     self.request_sections.inject(true){ |res, sec| res &&= sec.finished }
+  end
+
+  def satisfy_required_items
+    if  required = self.section_items.where(:required => true, :value => 1).blank?
+      return true
+    else
+      return false
+    end
+  
   end
   
   #TYPE AVERAGE METHODS 

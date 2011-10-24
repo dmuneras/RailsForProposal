@@ -11,16 +11,19 @@ class SectionRole < ActiveRecord::Base
   scope :not_pending, where("status != 'pending'")
   
   def rate(rates)
-    count = 0
-    rates.each do |k, v|
-      section_item = SectionItem.find(k)
-      self.average += (section_item.value * v.to_f)
-      count += section_item.value
+    items = self.request_section.section_items
+    suma = 0
+    for item in items do
+      suma += item.value
     end
-    self.average /= count
+    self.average = suma / items.count
     self.status = 'rated'
     self.save
     self.request_section.update_average
+  end
+
+  def update_items_values(items)
+    self.request_section.update_items_values(items)
   end
   
 end

@@ -17,7 +17,7 @@ class RequestSectionsController < ApplicationController
   def create
     @request_section = RequestSection.new(params[:request_section])
     if @request_section.save
-      redirect_to @request_section.request, :notice => "Seccion creada exitosamente."
+      redirect_to @request_section.request, :notice => "Seccion creada exitosamente(Recuerde que para calificarla debe agregar items de evaluacion)."
     else
       render :action => 'new'
     end

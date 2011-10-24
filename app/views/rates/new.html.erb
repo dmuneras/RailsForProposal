@@ -1,8 +1,8 @@
 <% title "#{@section_role.request_section.request.name}"%>
-
 <p>
   <%= @section_role.user.full_name %> - <%= @section_role.request_section.section.name %>
 </p>
+<p>Si es item que estas evaluando es un exigible y necesitas decir que no se cumple debes ponerle 1 en la calificacion</p>
 
 <div class="form-rates">
 <%= form_tag '/rates' do %>
@@ -14,7 +14,11 @@
     </tr>
     <% for item in @section_role.request_section.section_items %>
       <tr>
-        <td><%= item.name %></td>
+        <td><%= item.name %>
+	  <% if item.required == true %>
+	     <p>(exigible)</p>
+	  <% end %>
+	</td>
         <% (1..5).each do |i| %>
           <td><%= radio_button :section_items, item.id, i %></td>
         <% end -%>

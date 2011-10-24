@@ -29,7 +29,6 @@ class SectionRolesController < ApplicationController
     if @section_role.save
       redirect_to @section_role.request_section.request, :notice => "Rol asignado exitosamente" 
     else
-      rfp
       render :action => 'new'
     end
   end
