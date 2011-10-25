@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
+    @sectors = Sector.all
     @company = Company.new(params[:company])
     if @company.save
       redirect_to new_request_path, :notice => t(:successfully_create_company)
@@ -22,10 +23,12 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+    @sectors = Sector.all
     @company = Company.find(params[:id])
   end
 
   def update
+    @sectors = Sector.all
     @company = Company.find(params[:id])
     if @company.update_attributes(params[:company])
       redirect_to @company, :notice  => "Successfully updated company."

@@ -40,6 +40,8 @@ class RequestsController < ApplicationController
   end
 
   def update
+    @types = RequestType.all
+    @companies = Company.all
     @request = Request.find(params[:id])
     if @request.update_attributes(params[:request])
       redirect_to @request, :notice  => "RFP actualizado exitosamente."

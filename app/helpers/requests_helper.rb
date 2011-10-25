@@ -6,7 +6,11 @@ module RequestsHelper
       content_tag(:td, rfp.name) <<
       content_tag(:td, rfp.start_date) <<
       content_tag(:td, rfp.decision_date) <<
-      content_tag(:td, rfp.company) <<
+      unless rfp.company.nil?
+        content_tag(:td, rfp.company.name)
+      else
+        content_tag(:td, t(:no_registered))
+      end <<
       content_tag(:td, rfp.status) <<
       content_tag(:td, "%0.2f" % rfp.average) <<
       content_tag(:td) do
@@ -51,10 +55,10 @@ module RequestsHelper
 
   def sector_info report
     content_tag :tr do
-      logger.info "************\n\n\n#{report} clase : #{report.class}\n\n\n"
-      logger.info "************\n\n\n#{report["name"]} clase : #{report["no_companies"]}\n\n\n"
       content_tag(:td, report[:name]) <<
-      content_tag(:td, report[:no_companies])        
+      content_tag(:td, report[:no_companies]) <<
+      content_tag(:td, report[:rejected_rfps]) <<
+      content_tag(:td, report[:accepted_rfps]) 
     end    
   end
   
