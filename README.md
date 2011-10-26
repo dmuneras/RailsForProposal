@@ -12,20 +12,25 @@ The application have 2 components: RFP managment and  RFP statistics, the second
 inside the company process and help to find the strengths and weaknesses of the company when its trying to choose
 the best RFPs.
 
+URL 
+____
+
+http://rorailsforproposal.heroku.com/
+
 Gem list
 --------
 
-gem 'rails', '3.0.7'					=> Framework MVC.
+- gem 'rails', '3.0.7'					=> Framework MVC.
 
-gem 'railroady'						=> Gem use to create diagrams.
+- gem 'railroady'					=> Gem use to create diagrams.
 
-gem 'nifty-generators', :group => :development          => Gem to generate pretty scaffolds, migrations and more.
+- gem 'nifty-generators', :group => :development        => Gem to generate pretty scaffolds, migrations and more.
 
-gem 'formtastic'	       	  		        => Gem to create in a easier way forms.
+- gem 'formtastic'	       	  		        => Gem to create in a easier way forms.
 
-gem 'jquery-rails'					=> Gem to add JQUERY(javascript library to the aplication).
+- gem 'jquery-rails'					=> Gem to add JQUERY(javascript library to the aplication).
 
-gem 'authlogic' 					=> Gem to add the user managment to the application(sessions, current_user).
+- gem 'authlogic' 					=> Gem to add the user managment to the application(sessions, current_user).
 
 
 Plugins list
