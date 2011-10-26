@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(params[:comment])
     @comment.update_attributes(:author_id => current_user.id)
     if @comment.save
-      flash[:notice] = "Successfully created comment."
+      flash[:notice] = "Comentario creado satisfactoriamente."
       redirect_to @commentable
     else
       render :action => 'new'
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
-      redirect_to @comment, :notice  => "Successfully updated comment."
+      redirect_to @comment, :notice  => "Comentario actualizado satisfactoriamente."
     else
       render :action => 'edit'
     end
