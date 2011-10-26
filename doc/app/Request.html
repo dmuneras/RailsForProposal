@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Request</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./app/models/request_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="app/models/request.rb">app/models/request.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">ActiveRecord::Base</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-average_gen">::average_gen</a></li>
+					
+					<li><a href="#method-c-average_type">::average_type</a></li>
+					
+					<li><a href="#method-c-first_evaluation_per_type">::first_evaluation_per_type</a></li>
+					
+					<li><a href="#method-c-rfps_per_type">::rfps_per_type</a></li>
+					
+					<li><a href="#method-c-statistics_per_type">::statistics_per_type</a></li>
+					
+					<li><a href="#method-c-statistics_per_type_status">::statistics_per_type_status</a></li>
+					
+					<li><a href="#method-i-end_first_evaluation">#end_first_evaluation</a></li>
+					
+					<li><a href="#method-i-finished">#finished</a></li>
+					
+					<li><a href="#method-i-rated">#rated</a></li>
+					
+					<li><a href="#method-i-satisfy_required_items">#satisfy_required_items</a></li>
+					
+					<li><a href="#method-i-save_file">#save_file</a></li>
+					
+					<li><a href="#method-i-section">#section</a></li>
+					
+					<li><a href="#method-i-update_average">#update_average</a></li>
+					
+					<li><a href="#method-i-users">#users</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./ErrorMessagesHelper.html">ErrorMessagesHelper</a></li>
+				
+					<li><a href="./ErrorMessagesHelper/FormBuilderAdditions.html">ErrorMessagesHelper::FormBuilderAdditions</a></li>
+				
+					<li><a href="./ApplicationController.html">ApplicationController</a></li>
+				
+					<li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
+				
+					<li><a href="./Comment.html">Comment</a></li>
+				
+					<li><a href="./CommentsController.html">CommentsController</a></li>
+				
+					<li><a href="./CommentsHelper.html">CommentsHelper</a></li>
+				
+					<li><a href="./CompaniesController.html">CompaniesController</a></li>
+				
+					<li><a href="./CompaniesHelper.html">CompaniesHelper</a></li>
+				
+					<li><a href="./Company.html">Company</a></li>
+				
+					<li><a href="./LayoutHelper.html">LayoutHelper</a></li>
+				
+					<li><a href="./RatesController.html">RatesController</a></li>
+				
+					<li><a href="./RatesHelper.html">RatesHelper</a></li>
+				
+					<li><a href="./Request.html">Request</a></li>
+				
+					<li><a href="./RequestSection.html">RequestSection</a></li>
+				
+					<li><a href="./RequestSectionsController.html">RequestSectionsController</a></li>
+				
+					<li><a href="./RequestSectionsHelper.html">RequestSectionsHelper</a></li>
+				
+					<li><a href="./RequestType.html">RequestType</a></li>
+				
+					<li><a href="./RequestTypesController.html">RequestTypesController</a></li>
+				
+					<li><a href="./RequestTypesHelper.html">RequestTypesHelper</a></li>
+				
+					<li><a href="./RequestsController.html">RequestsController</a></li>
+				
+					<li><a href="./RequestsHelper.html">RequestsHelper</a></li>
+				
+					<li><a href="./Section.html">Section</a></li>
+				
+					<li><a href="./SectionItem.html">SectionItem</a></li>
+				
+					<li><a href="./SectionItemsController.html">SectionItemsController</a></li>
+				
+					<li><a href="./SectionItemsHelper.html">SectionItemsHelper</a></li>
+				
+					<li><a href="./SectionRole.html">SectionRole</a></li>
+				
+					<li><a href="./SectionRolesController.html">SectionRolesController</a></li>
+				
+					<li><a href="./SectionRolesHelper.html">SectionRolesHelper</a></li>
+				
+					<li><a href="./SectionsController.html">SectionsController</a></li>
+				
+					<li><a href="./SectionsHelper.html">SectionsHelper</a></li>
+				
+					<li><a href="./Sector.html">Sector</a></li>
+				
+					<li><a href="./SectorsController.html">SectorsController</a></li>
+				
+					<li><a href="./SectorsHelper.html">SectorsHelper</a></li>
+				
+					<li><a href="./User.html">User</a></li>
+				
+					<li><a href="./UserSession.html">UserSession</a></li>
+				
+					<li><a href="./UserSessionsController.html">UserSessionsController</a></li>
+				
+					<li><a href="./UserSessionsHelper.html">UserSessionsHelper</a></li>
+				
+					<li><a href="./UsersController.html">UsersController</a></li>
+				
+					<li><a href="./UsersHelper.html">UsersHelper</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Request</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="file-upload-attribute-method" class="method-detail">
+				<a name="file_upload"></a>
+				
+				<a name="file_upload="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">file_upload</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="average-gen-method" class="method-detail ">
+				<a name="method-c-average_gen"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">average_gen</span><span
+						class="method-args">(array)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+TYPE AVERAGE METHODS 
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="average-gen-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 67</span>
+67:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">average_gen</span> <span class="ruby-identifier">array</span>
+68:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">blank?</span>
+69:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span>
+70:     <span class="ruby-keyword kw">end</span>
+71:     <span class="ruby-identifier">sum</span> = <span class="ruby-value">0.0</span>
+72:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">thing</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">array</span> <span class="ruby-keyword kw">do</span>
+73:       <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">thing</span>.<span class="ruby-identifier">average</span> 
+74:     <span class="ruby-keyword kw">end</span>
+75:     <span class="ruby-identifier">total_avg</span> = <span class="ruby-identifier">sum</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">count</span>
+76:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">total_avg</span>
+77:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="average-type-method" class="method-detail ">
+				<a name="method-c-average_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">average_type</span><span
+						class="method-args">(type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="average-type-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 88</span>
+88:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">average_type</span> <span class="ruby-identifier">type</span>
+89:     <span class="ruby-identifier">rqs</span> = <span class="ruby-constant">Request</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;request_type_id = :request_type_id AND decision_date &gt; :today&quot;</span>,
+90:                         {<span class="ruby-value">:request_type_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:today</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>}
+91:     )
+92:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">average_gen</span> <span class="ruby-identifier">rqs</span>
+93:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="first-evaluation-per-type-method" class="method-detail ">
+				<a name="method-c-first_evaluation_per_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">first_evaluation_per_type</span><span
+						class="method-args">(type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="first-evaluation-per-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/request.rb, line 102</span>
+102:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">first_evaluation_per_type</span> <span class="ruby-identifier">type</span>
+103:     <span class="ruby-identifier">rqs</span> = <span class="ruby-constant">Request</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:request_type_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">id</span>)
+104:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rqs</span>.<span class="ruby-identifier">blank?</span>
+105:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0.0</span>
+106:     <span class="ruby-keyword kw">end</span>
+107:     <span class="ruby-identifier">sum</span> = <span class="ruby-value">0.0</span>
+108:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">request</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">rqs</span> <span class="ruby-keyword kw">do</span>
+109:       <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">end_first_evaluation</span>
+110:     <span class="ruby-keyword kw">end</span>
+111:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">total_avg</span> = <span class="ruby-identifier">sum</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">rqs</span>.<span class="ruby-identifier">count</span>
+112:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rfps-per-type-method" class="method-detail ">
+				<a name="method-c-rfps_per_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">rfps_per_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rfps-per-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/request.rb, line 129</span>
+129:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">rfps_per_type</span>
+130:     <span class="ruby-identifier">result</span> =[]
+131:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword kw">in</span> <span class="ruby-constant">RequestType</span>.<span class="ruby-identifier">all</span> <span class="ruby-keyword kw">do</span>
+132:       <span class="ruby-identifier">data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+133:       <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;total&quot;</span>] = <span class="ruby-constant">Request</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:request_type_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">count</span>  
+134:       <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;name&quot;</span>] = <span class="ruby-node">&quot;#{type.name} ( #{data[&quot;total&quot;]} )&quot;</span>
+135:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>
+136:     <span class="ruby-keyword kw">end</span>
+137:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+138:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="statistics-per-type-method" class="method-detail ">
+				<a name="method-c-statistics_per_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">statistics_per_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="statistics-per-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/request.rb, line 115</span>
+115:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">statistics_per_type</span>
+116:     <span class="ruby-identifier">result</span> = []
+117:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword kw">in</span> <span class="ruby-constant">RequestType</span>.<span class="ruby-identifier">all</span> <span class="ruby-keyword kw">do</span>
+118:       <span class="ruby-identifier">type_stat</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+119:       <span class="ruby-identifier">type_stat</span>[<span class="ruby-value str">&quot;name&quot;</span>] =  <span class="ruby-identifier">type</span>.<span class="ruby-identifier">name</span>  
+120:       <span class="ruby-identifier">type_stat</span>[<span class="ruby-value str">&quot;avg&quot;</span>]  = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">average_type</span>(<span class="ruby-identifier">type</span>)
+121:       <span class="ruby-identifier">type_stat</span>[<span class="ruby-value str">&quot;first_evaluation_time&quot;</span>] = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">first_evaluation_per_type</span>(<span class="ruby-identifier">type</span>) 
+122:       <span class="ruby-identifier">type_stat</span>[<span class="ruby-value str">&quot;accepted_stat&quot;</span>] = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">statistics_per_type_status</span>(<span class="ruby-identifier">type</span>, <span class="ruby-value str">&quot;accepted&quot;</span>) 
+123:       <span class="ruby-identifier">type_stat</span>[<span class="ruby-value str">&quot;rejected_stat&quot;</span>] = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">statistics_per_type_status</span>(<span class="ruby-identifier">type</span>, <span class="ruby-value str">&quot;rejected&quot;</span>) 
+124:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">type_stat</span>
+125:     <span class="ruby-keyword kw">end</span>
+126:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+127:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="statistics-per-type-status-method" class="method-detail ">
+				<a name="method-c-statistics_per_type_status"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">statistics_per_type_status</span><span
+						class="method-args">(type, status)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="statistics-per-type-status-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 79</span>
+79:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">statistics_per_type_status</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">status</span>)
+80:     <span class="ruby-identifier">rqs</span> = <span class="ruby-constant">Request</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:request_type_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">status</span>)
+81:     <span class="ruby-identifier">avg_total</span> = <span class="ruby-identifier">average_gen</span> <span class="ruby-identifier">rqs</span>
+82:     <span class="ruby-identifier">result</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+83:     <span class="ruby-identifier">result</span>[<span class="ruby-value str">&quot;total&quot;</span>] = <span class="ruby-identifier">rqs</span>.<span class="ruby-identifier">count</span>
+84:     <span class="ruby-identifier">result</span>[<span class="ruby-value str">&quot;avg_total&quot;</span>] = <span class="ruby-identifier">avg_total</span>
+85:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+86:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="end-first-evaluation-method" class="method-detail ">
+				<a name="method-i-end_first_evaluation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_first_evaluation</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="end-first-evaluation-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/request.rb, line 95</span>
+ 95:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_first_evaluation</span> 
+ 96:     <span class="ruby-identifier">role</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">section_roles</span>.<span class="ruby-identifier">first</span>
+ 97:     <span class="ruby-identifier">time</span> = <span class="ruby-value">0</span>
+ 98:     <span class="ruby-identifier">time</span> = (( <span class="ruby-identifier">role</span>.<span class="ruby-identifier">created_at</span> <span class="ruby-operator">-</span>  <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">created_at</span>)<span class="ruby-operator">/</span> <span class="ruby-value">1</span>.<span class="ruby-identifier">day</span>).<span class="ruby-identifier">to_i</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">role</span>.<span class="ruby-identifier">nil?</span> 
+ 99:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">time</span>
+100:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="finished-method" class="method-detail ">
+				<a name="method-i-finished"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">finished</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="finished-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 52</span>
+52:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">finished</span>
+53:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_sections</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-keyword kw">true</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">res</span>, <span class="ruby-identifier">sec</span><span class="ruby-operator">|</span> <span class="ruby-identifier">res</span> <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-identifier">sec</span>.<span class="ruby-identifier">finished</span> }
+54:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rated-method" class="method-detail ">
+				<a name="method-i-rated"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">rated</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rated-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rated</span>
+24:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">'pending'</span>
+25:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="satisfy-required-items-method" class="method-detail ">
+				<a name="method-i-satisfy_required_items"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">satisfy_required_items</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="satisfy-required-items-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 56</span>
+56:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">satisfy_required_items</span>
+57:     <span class="ruby-keyword kw">if</span>  <span class="ruby-identifier">required</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">section_items</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:required</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-value">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">blank?</span>
+58:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+59:     <span class="ruby-keyword kw">else</span>
+60:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+61:     <span class="ruby-keyword kw">end</span>
+62:   
+63:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="save-file-method" class="method-detail ">
+				<a name="method-i-save_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">save_file</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="save-file-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 35</span>
+35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save_file</span>
+36:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file_upload</span>
+37:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file_upload</span>.<span class="ruby-identifier">original_filename</span>
+38:     <span class="ruby-identifier">directory</span> = <span class="ruby-node">&quot;#{Rails.root}/public/upload/rfp/&quot;</span>
+39:     <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">directory</span>,<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename</span>)
+40:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">&quot;wb&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file_upload</span>.<span class="ruby-identifier">read</span>) }
+41:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="section-method" class="method-detail ">
+				<a name="method-i-section"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">section</span><span
+						class="method-args">(id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="section-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">section</span>(<span class="ruby-identifier">id</span>)
+28:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_sections</span>.<span class="ruby-identifier">find_by_section_id</span>(<span class="ruby-identifier">id</span>)
+29:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-average-method" class="method-detail ">
+				<a name="method-i-update_average"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update_average</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="update-average-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 43</span>
+43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_average</span>
+44:     <span class="ruby-identifier">sum</span> = <span class="ruby-value">0.0</span>
+45:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">section</span> <span class="ruby-keyword kw">in</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_sections</span>
+46:       <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">section</span>.<span class="ruby-identifier">average</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">section</span>.<span class="ruby-identifier">average</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.0</span> 
+47:     <span class="ruby-keyword kw">end</span>    
+48:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">average</span> = <span class="ruby-identifier">sum</span> <span class="ruby-operator">/</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_sections</span>.<span class="ruby-identifier">count</span>
+49:     <span class="ruby-identifier">save</span>
+50:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="users-method" class="method-detail ">
+				<a name="method-i-users"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">users</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="users-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/request.rb, line 31</span>
+31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">users</span>    
+32:     <span class="ruby-constant">User</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">section_roles</span>.<span class="ruby-identifier">inject</span>([]){ <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">user_id</span> } )
+33:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
