@@ -20,10 +20,12 @@ class Request < ActiveRecord::Base
 
   before_save :save_file
  
+  #Method to set the status of one RFP
   def rated
     self.status != 'pending'
   end
   
+  #Method to obtain de section with any id
   def section(id)
     self.request_sections.find_by_section_id(id)
   end
@@ -61,10 +63,10 @@ class Request < ActiveRecord::Base
     end
   
   end
+  #=====================================AVERAGE METHODS========================================#
   
-  #TYPE AVERAGE METHODS 
-
-  def self.average_gen array
+  #Method to get the a generic average for any array of Object with average atributte.
+  def self.average_gen array 
     if array.blank?
       return 0
     end
@@ -76,6 +78,7 @@ class Request < ActiveRecord::Base
     return total_avg
   end
 
+  #This method return the statistics per RFP status
   def self.statistics_per_type_status(type, status)
     rqs = Request.where(:request_type_id => type.id, :status => status)
     avg_total = average_gen rqs
