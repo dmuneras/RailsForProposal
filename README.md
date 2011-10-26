@@ -15,18 +15,24 @@ the best RFPs.
 Gem list
 --------
 
-gem 'rails', '3.0.7'					=> Framework MVC
-gem 'railroady'						=> Gem use to create diagrams 
+gem 'rails', '3.0.7'					=> Framework MVC.
+
+gem 'railroady'						=> Gem use to create diagrams.
+
 gem 'nifty-generators', :group => :development          => Gem to generate pretty scaffolds, migrations and more.
-gem 'formtastic'	       	  		        => Gem to create in a easier way forms
-gem 'jquery-rails'					=> Gem to add JQUERY(javascript library to the aplication)
-gem 'authlogic' 					=> Gem to add the user managment to the application(sessions, current_user)
+
+gem 'formtastic'	       	  		        => Gem to create in a easier way forms.
+
+gem 'jquery-rails'					=> Gem to add JQUERY(javascript library to the aplication).
+
+gem 'authlogic' 					=> Gem to add the user managment to the application(sessions, current_user).
 
 
 Plugins list
 ------------
 
 open_flash_chart                                       => Plugin to create charts in flash format
+
 validation_reflection				       => Plugin to improve the formastic's validations
 
 Server
